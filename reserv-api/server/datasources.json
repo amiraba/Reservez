@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongo": {
+    "host": "amirapc",
+    "port": 27017,
+    "url": "",
+    "database": "reserv",
+    "password": "amira",
+    "name": "mongo",
+    "user": "amira",
+    "connector": "mongodb"
+  }
+}

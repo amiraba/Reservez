@@ -1,0 +1,76 @@
+	<!--Main content-->
+    <div>
+        
+    </div>
+
+    <main id="home">
+        
+	    <!--First container-->
+	    <div class="container-fluid pt-4">
+            
+            <!--Section: Los Angeles-->
+            <section id="losangeles" class="section">
+            
+                <h1 class="section-heading pt-4 pb-2 black-text wow fadeIn" data-wow-delay="0.2s">Hôtelerie</h1>
+                
+
+                <md-grid-list cols="3">
+                    <md-grid-tile
+                        *ngFor="let offreRes of offreReservs"
+                        [style.background]='lightpink'>
+
+                            <!--First row-->
+                            <div class="row wow fadeIn" data-wow-delay="0.4s">
+        
+                                <div id="mdb-lightbox-ui"></div>
+
+                                <!--Full width lightbox-->
+                                <div class="mdb-lightbox" style="padding: 30px">
+                                    <figure class="col-md-12">
+                                        <a href="http://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(46).jpg" data-size="1600x1067">
+                                            <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(46).jpg" class="img-fluid">
+                                        </a>
+                                        <h5>{{offreRes.titre}}</h5>
+                                    </figure>
+                                </div>
+                            </div>
+
+                    </md-grid-tile>
+                  </md-grid-list>
+                
+            </section>
+            <!--/Section: Los Angeles-->
+            
+	        
+	    </div>
+	    <!--/First container-->
+	    
+	    
+	</main>
+	<!--/Main content-->
+
+	<!-- SCRIPTS -->
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/tether.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+
+	<script>
+		
+    // MDB Lightbox Init
+    $(function () {
+        $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    }); 
+       
+    //Animation Init
+    new WOW().init();
+
+	</script>
