@@ -38,5 +38,9 @@
   "offreReserv": {
     "dataSource": "mongo",
     "public": true
+  },
+  "prestataires": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

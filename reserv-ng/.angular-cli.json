@@ -19,7 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "offreRes-css/bootstrap.css",
+        "offreRes-css/bootstrap.min.css",
+        "offreRes-css/mdb.css",
+        "offreRes-css/mdb.min.css",
+        "offreRes-css/style.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

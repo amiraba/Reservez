@@ -7,13 +7,7 @@ import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [
-    './offreRes-css/bootstrap.css',
-    './offreRes-css/bootstrap.min.css',
-    './offreRes-css/mdb.css',
-    './offreRes-css/mdb.min.css',
-    './offreRes-css/style.css',
-]
+  styleUrls: []
 })
 export class AppComponent implements OnInit{
   title = 'app';

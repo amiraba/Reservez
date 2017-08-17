@@ -16,15 +16,15 @@
     },
     "heureDebut": {
       "type": "string",
-	  "required": true
+      "required": true
     },
     "heureFin": {
       "type": "string",
-	  "required": true
+      "required": true
     },
     "dureeEstimee": {
       "type": "string",
-	  "required": true
+      "required": true
     },
     "nbreClientsSimultanes": {
       "type": "number",
@@ -35,7 +35,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "MonPrestataire": {
+      "type": "belongsTo",
+      "model": "prestataire",
+      "foreignKey": "prestataire"
+    }
+  },
   "acls": [],
   "methods": {}
 }
