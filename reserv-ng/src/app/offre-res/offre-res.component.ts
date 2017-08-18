@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-offre-res',
-  templateUrl: './offre-res.component.html',
+  templateUrl: '../offre-res/offre-res.component.html',
   styleUrls: []
 })
 export class OffreResComponent implements OnInit {
@@ -23,6 +23,10 @@ export class OffreResComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+
+  }
+
+  ngOnChanges(){
 
   }
 

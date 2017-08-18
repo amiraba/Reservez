@@ -11,9 +11,17 @@
             <!--Section: Los Angeles-->
             <section id="losangeles" class="section">
             
-                <h1 class="section-heading pt-4 pb-2 black-text wow fadeIn" data-wow-delay="0.2s">Hôtelerie</h1>
-                
+                <div class="section-heading pt-4 pb-2 black-text wow fadeIn" data-wow-delay="0.2s">
+                    
+                    <a href="http://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(46).jpg" data-size="1600x1067">
+                        <i class="material-icons">restaurant_menu</i>
+                    </a>
 
+                    <a routerLink="/offreResPerCategory" routerLinkActive="active">
+                        <i class="material-icons md-48" style="cursor: pointer">hotel</i>
+                    </a>
+                </div>
+                
                 <md-grid-list cols="3">
                     <md-grid-tile
                         *ngFor="let offreRes of offreReservs"

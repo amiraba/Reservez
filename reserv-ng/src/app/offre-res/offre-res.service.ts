@@ -33,12 +33,20 @@ export class OffreResService {
     let url="http://localhost:3000/api/offreReservs";
 
     return this.http.get(url, {headers: this.headers})
-      .map( res => res.json() )
+      .map( res => <OffreRes[]> res.json() )
       .catch( err => {return Observable.throw(err)});
   }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
+  }
+
+  getOffreResPerCategory(): Observable<OffreRes[]> {
+    let url="http://localhost:3000/api/prestataires/hotel/offreResPerPrestataireCategory";
+
+    return this.http.get(url, {headers: this.headers})
+      .map( res => <OffreRes[]> res.json() )
+      .catch( err => {return Observable.throw(err)});
   }
 }
