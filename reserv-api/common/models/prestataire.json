@@ -1,0 +1,84 @@
+{
+  "name": "prestataires",
+  "plural": "prestataires",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "categorie": {
+      "type": "string",
+      "required": true
+    },
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "adresse": {
+      "type": "string",
+      "required": true
+    },
+    "tel": {
+      "type": "string",
+      "required": true
+    },
+    "lien": {
+      "type": "string",
+      "required": true
+    },
+    "heure_douverture": {
+      "type": "string"
+    },
+    "heure_fermeture": {
+      "type": "string"
+    },
+    "pauses": {
+      "type": "string",
+      "required": true
+    },
+    "photo_prestataire": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "offreReservs": {
+      "type": "hasMany",
+      "model": "offreReserv",
+      "foreignKey": "offreReservs"
+    }
+  },
+  "acls": [],
+  "methods": {
+    "offreResPerPrestataireCategory": {
+      "accepts": [
+        {
+          "arg": "category",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "http": {
+            "source": "path"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "offreReservs",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/:category/offreResPerPrestataireCategory",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

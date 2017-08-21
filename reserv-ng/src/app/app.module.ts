@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { OffreResComponent } from './offre-res/offre-res.component';
 
 import { OffreResService } from './offre-res/offre-res.service';
+
 import {MdGridListModule, MdIconModule} from '@angular/material';
 import { OffreResPerCategoryComponent } from './offre-res-per-category/offre-res-per-category.component';
+
 
 const appRoutes: Routes = [
   { path: 'offreRes', component: OffreResComponent },
@@ -20,7 +22,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     OffreResComponent,
-    OffreResPerCategoryComponent
+    OffreResPerCategoryComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     MdGridListModule,
     MdIconModule
   ],
-  providers: [OffreResService],
+  providers: [OffreResService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
