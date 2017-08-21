@@ -39,7 +39,11 @@
     "dataSource": "mongo",
     "public": true
   },
-  "prestataires": {
+  "client": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "prestataire": {
     "dataSource": "mongo",
     "public": true
   }

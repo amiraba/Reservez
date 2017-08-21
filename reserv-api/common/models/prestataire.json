@@ -1,5 +1,5 @@
 {
-  "name": "prestataires",
+  "name": "prestataire",
   "plural": "prestataires",
   "base": "PersistedModel",
   "idInjection": true,
@@ -43,42 +43,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "offreReservs": {
-      "type": "hasMany",
-      "model": "offreReserv",
-      "foreignKey": "offreReservs"
-    }
-  },
+  "relations": {},
   "acls": [],
-  "methods": {
-    "offreResPerPrestataireCategory": {
-      "accepts": [
-        {
-          "arg": "category",
-          "type": "string",
-          "required": true,
-          "description": "",
-          "http": {
-            "source": "path"
-          }
-        }
-      ],
-      "returns": [
-        {
-          "arg": "offreReservs",
-          "type": "array",
-          "root": true,
-          "description": ""
-        }
-      ],
-      "description": "",
-      "http": [
-        {
-          "path": "/:category/offreResPerPrestataireCategory",
-          "verb": "get"
-        }
-      ]
-    }
-  }
+  "methods": {}
 }

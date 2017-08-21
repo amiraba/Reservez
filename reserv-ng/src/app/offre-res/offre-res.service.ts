@@ -42,8 +42,8 @@ export class OffreResService {
     return Promise.reject(error.message || error);
   }
 
-  getOffreResPerCategory(): Observable<OffreRes[]> {
-    let url="http://localhost:3000/api/prestataires/hotel/offreResPerPrestataireCategory";
+  offreResPerPrestataireCategory(theCategory): Observable<OffreRes[]> {
+    let url="http://localhost:3000/api/offreReservs/"+theCategory+"/offreResPerPrestataireCategory";
 
     return this.http.get(url, {headers: this.headers})
       .map( res => <OffreRes[]> res.json() )

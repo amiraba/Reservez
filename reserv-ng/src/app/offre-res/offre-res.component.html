@@ -13,13 +13,10 @@
             
                 <div class="section-heading pt-4 pb-2 black-text wow fadeIn" data-wow-delay="0.2s">
                     
-                    <a href="http://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(46).jpg" data-size="1600x1067">
-                        <i class="material-icons">restaurant_menu</i>
-                    </a>
+                    <i class="material-icons amira-icon" (click)="offreResPerPrestataireCategory('Restaurant')">restaurant_menu</i>
 
-                    <a routerLink="/offreResPerCategory" routerLinkActive="active">
-                        <i class="material-icons md-48" style="cursor: pointer">hotel</i>
-                    </a>
+                    <i class="material-icons md-48 amira-icon" style="cursor: pointer" (click)="offreResPerPrestataireCategory('Hotel')">hotel</i>
+
                 </div>
                 
                 <md-grid-list cols="3">

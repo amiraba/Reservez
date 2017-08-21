@@ -10,19 +10,16 @@ import { OffreResComponent } from './offre-res/offre-res.component';
 import { OffreResService } from './offre-res/offre-res.service';
 
 import {MdGridListModule, MdIconModule} from '@angular/material';
-import { OffreResPerCategoryComponent } from './offre-res-per-category/offre-res-per-category.component';
 
 
 const appRoutes: Routes = [
-  { path: 'offreRes', component: OffreResComponent },
-  { path: 'offreResPerCategory', component: OffreResPerCategoryComponent }
+  { path: 'offreRes', component: OffreResComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    OffreResComponent,
-    OffreResPerCategoryComponent,
+    OffreResComponent
   ],
   imports: [
     RouterModule.forRoot(

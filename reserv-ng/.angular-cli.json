@@ -20,11 +20,11 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "offreRes-css/bootstrap.css",
-        "offreRes-css/bootstrap.min.css",
-        "offreRes-css/mdb.css",
-        "offreRes-css/mdb.min.css",
-        "offreRes-css/style.css"
+        "zina-offreRes/offreRes-css/bootstrap.css",
+        "zina-offreRes/offreRes-css/bootstrap.min.css",
+        "zina-offreRes/offreRes-css/mdb.css",
+        "zina-offreRes/offreRes-css/mdb.min.css",
+        "zina-offreRes/offreRes-css/style.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

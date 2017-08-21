@@ -1,9 +1,5 @@
 'use strict';
 
-module.exports = function(prestataire) {
+module.exports = function(Prestataire) {
 
-/**                                                        
- * @param {string} category
- * @param {Function(Error, array)} callback
-*/                           
 };

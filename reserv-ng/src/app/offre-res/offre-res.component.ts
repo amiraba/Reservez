@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'app-offre-res',
   templateUrl: '../offre-res/offre-res.component.html',
-  styleUrls: []
+  styleUrls: ['offre-res.component.css']
 })
 export class OffreResComponent implements OnInit {
 
@@ -26,10 +26,15 @@ export class OffreResComponent implements OnInit {
 
   }
 
-  ngOnChanges(){
-
+  offreResPerPrestataireCategory(theCategory){
+    this.OffreResService.offreResPerPrestataireCategory(theCategory)
+    .subscribe (res => {
+      this.offreReservs=res;
+      console.log(this.offreReservs);
+      }, err => {
+        console.log(err);
+      });
   }
-
 }
 
 

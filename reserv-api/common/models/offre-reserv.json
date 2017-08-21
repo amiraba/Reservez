@@ -1,5 +1,6 @@
 {
   "name": "offreReserv",
+  "plural": "offreReservs",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -32,16 +33,43 @@
     },
     "photoOffreRes": {
       "type": "string"
+    },
+    "prestataire_categorie": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "MonPrestataire": {
-      "type": "belongsTo",
-      "model": "prestataire",
-      "foreignKey": "prestataire"
-    }
-  },
+  "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {
+    "offreResPerPrestataireCategory": {
+      "accepts": [
+        {
+          "arg": "category",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "http": {
+            "source": "path"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "offreReservs",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/:category/offreResPerPrestataireCategory",
+          "verb": "get"
+        }
+      ]
+    }
+  }
 }
