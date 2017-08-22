@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { OffreResService } from './offre-res.service';
 import { OffreRes } from './offreRes';
 import {Observable} from 'rxjs';
+import {MdDialog} from '@angular/material';
+import {ReserverComponent} from "../reserver/reserver.component";
 
 @Component({
   selector: 'app-offre-res',
@@ -13,7 +15,7 @@ export class OffreResComponent implements OnInit {
 
   offreReservs: OffreRes[] =[];
 
-  constructor(private OffreResService: OffreResService) { }
+  constructor(private OffreResService: OffreResService, private dialog: MdDialog) { }
 
   ngOnInit(): void {
     this.OffreResService.getOffreRes()
@@ -35,6 +37,14 @@ export class OffreResComponent implements OnInit {
         console.log(err);
       });
   }
+  popout(){
+    console.log("tatat");
+    let dialogRef = this.dialog.open(ReserverComponent, {
+      height: '400px',
+      width: '600px',
+    });
+  }
+
 }
 
 

@@ -6,11 +6,12 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { OffreResComponent } from './offre-res/offre-res.component';
+import { ReserverComponent } from './reserver/reserver.component';
 
 import { OffreResService } from './offre-res/offre-res.service';
 
-import {MdGridListModule, MdIconModule} from '@angular/material';
-
+import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'offreRes', component: OffreResComponent }
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    OffreResComponent
+    OffreResComponent,
+    ReserverComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -29,9 +31,15 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     MdGridListModule,
-    MdIconModule
+    MdIconModule,
+    MdDialogModule,
+    BrowserAnimationsModule
   ],
-  providers: [OffreResService
+  providers: [
+    OffreResService
+  ],
+  entryComponents: [
+    ReserverComponent
   ],
   bootstrap: [AppComponent]
 })

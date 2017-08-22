@@ -1,24 +1,24 @@
 	<!--Main content-->
     <div>
-        
+
     </div>
 
     <main id="home">
-        
+
 	    <!--First container-->
 	    <div class="container-fluid pt-4">
-            
+
             <!--Section: Los Angeles-->
             <section id="losangeles" class="section">
-            
+
                 <div class="section-heading pt-4 pb-2 black-text wow fadeIn" data-wow-delay="0.2s">
-                    
+
                     <i class="material-icons amira-icon" (click)="offreResPerPrestataireCategory('Restaurant')">restaurant_menu</i>
 
-                    <i class="material-icons md-48 amira-icon" style="cursor: pointer" (click)="offreResPerPrestataireCategory('Hotel')">hotel</i>
+                    <i class="material-icons md-48 amira-icon" (click)="offreResPerPrestataireCategory('Hotel')">hotel</i>
 
                 </div>
-                
+
                 <md-grid-list cols="3">
                     <md-grid-tile
                         *ngFor="let offreRes of offreReservs"
@@ -26,31 +26,30 @@
 
                             <!--First row-->
                             <div class="row wow fadeIn" data-wow-delay="0.4s">
-        
+
                                 <div id="mdb-lightbox-ui"></div>
 
                                 <!--Full width lightbox-->
-                                <div class="mdb-lightbox" style="padding: 30px">
+                                <div class="mdb-lightbox" style="padding: 30px" >
                                     <figure class="col-md-12">
-                                        <a href="http://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(46).jpg" data-size="1600x1067">
                                             <img src={{offreRes.photoOffreRes}} class="img-fluid">
-                                        </a>
-                                        <h5>{{offreRes.titre}}</h5>
+                                            <h5>{{offreRes.titre}}</h5>
+                                            <i class="material-icons" (click)="popout()">book</i>
                                     </figure>
                                 </div>
                             </div>
 
                     </md-grid-tile>
                   </md-grid-list>
-                
+
             </section>
             <!--/Section: Los Angeles-->
-            
-	        
+
+
 	    </div>
 	    <!--/First container-->
-	    
-	    
+
+
 	</main>
 	<!--/Main content-->
 
@@ -69,12 +68,12 @@
 	<script type="text/javascript" src="js/mdb.min.js"></script>
 
 	<script>
-		
+
     // MDB Lightbox Init
     $(function () {
         $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
-    }); 
-       
+    });
+
     //Animation Init
     new WOW().init();
 
