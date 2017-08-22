@@ -8,3 +8,6 @@ export class OffreRes {
     photoOffreRes: string;
     prestataire_categorie: string;
   }
+
+
+

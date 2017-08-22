@@ -37,11 +37,15 @@ export class OffreResComponent implements OnInit {
         console.log(err);
       });
   }
-  popout(category){
-    console.log(category);
+  popout(offreRes){
+    console.log(offreRes.titre);
     let dialogRef = this.dialog.open(ReserverComponent, {
-      height: '400px',
-      width: '600px',
+      height: '60%',
+      width: '70%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
     });
   }
 
