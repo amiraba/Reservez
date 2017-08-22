@@ -5,5 +5,6 @@ export class OffreRes {
     heureFin: string;
     dureeEstimee: string;
     nbreClientsSimultanes: number;
-    photoOffreRes: string
+    photoOffreRes: string;
+    prestataire_categorie: string;
   }

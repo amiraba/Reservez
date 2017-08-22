@@ -37,8 +37,8 @@ export class OffreResComponent implements OnInit {
         console.log(err);
       });
   }
-  popout(){
-    console.log("tatat");
+  popout(category){
+    console.log(category);
     let dialogRef = this.dialog.open(ReserverComponent, {
       height: '400px',
       width: '600px',
