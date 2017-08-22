@@ -21,16 +21,17 @@
       <hr>
     </div>
 
-    <!--Body-->
     <div class="md-form">
-      <i class="fa fa-user prefix"></i>
-      <input type="text" id="form1" class="form-control">
-      <label for="form1">Date</label>
+      <md-input-container>
+        <input mdInput [mdDatepicker]="picker" placeholder="Choisissez la date">
+        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      </md-input-container>
+      <md-datepicker #picker></md-datepicker>
     </div>
+
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
-      <input type="text" id="form2" class="form-control">
-      <label for="form2">Créneau horaire</label>
+      <input type="text" id="form2" class="form-control" placeholder="Choisissez votre créneau horaire">
     </div>
 
     <div class="md-form">
@@ -45,7 +46,7 @@
         <label for="checkbox1">Valider par mon empreinte digitale</label>
       </fieldset>
       <hr>
-      <button class="btn btn-ins btn-lg">Suivant</button>
+      <button class="btn btn-ins btn-lg">Réserver</button>
 
     </div>
 

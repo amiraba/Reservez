@@ -10,7 +10,7 @@ import { ReserverComponent } from './reserver/reserver.component';
 
 import { OffreResService } from './offre-res/offre-res.service';
 
-import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule} from '@angular/material';
+import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule, MdDatepickerModule, MdNativeDateModule, MdInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2restaurant.component';
 
@@ -35,7 +35,10 @@ const appRoutes: Routes = [
     MdGridListModule,
     MdIconModule,
     MdDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MdInputModule
   ],
   providers: [
     OffreResService
