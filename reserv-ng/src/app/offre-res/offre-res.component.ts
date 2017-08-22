@@ -38,14 +38,14 @@ export class OffreResComponent implements OnInit {
       });
   }
   popout(offreRes){
-    console.log(offreRes.titre);
+    //console.log(offreRes.titre);
     let dialogRef = this.dialog.open(ReserverComponent, {
+      data: offreRes,
       height: '60%',
-      width: '70%',
+      width: '70%'
     });
 
     dialogRef.afterClosed().subscribe(result => {
-
     });
   }
 

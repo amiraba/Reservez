@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
+import {MdDialog} from '@angular/material';
+import {Reserver2restaurantComponent} from "../reserver2restaurant/reserver2restaurant.component";
+import {MD_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-reserver',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReserverComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public offreRes: any) { }
 
   ngOnInit() {
   }
-
+  popout2(){
+    console.log("bla:"+this.offreRes.titre);
+    this.dialog.closeAll();
+    let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
+      data: this.offreRes,
+      height: '60%',
+      width: '70%',
+    });
+  }
 }

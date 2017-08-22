@@ -12,6 +12,7 @@ import { OffreResService } from './offre-res/offre-res.service';
 
 import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2restaurant.component';
 
 const appRoutes: Routes = [
   { path: 'offreRes', component: OffreResComponent }
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     OffreResComponent,
-    ReserverComponent
+    ReserverComponent,
+    Reserver2restaurantComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     OffreResService
   ],
   entryComponents: [
-    ReserverComponent
+    ReserverComponent,
+    Reserver2restaurantComponent
   ],
   bootstrap: [AppComponent]
 })
