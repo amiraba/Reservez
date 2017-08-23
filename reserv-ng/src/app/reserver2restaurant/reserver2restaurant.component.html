@@ -23,7 +23,7 @@
 
     <div class="md-form">
       <md-input-container>
-        <input mdInput [mdDatepicker]="picker" placeholder="Choisissez la date">
+        <input mdInput [mdDatepicker]="picker" placeholder="Choisissez la date" [(ngModel)]="reserv.date">
         <button mdSuffix [mdDatepickerToggle]="picker"></button>
       </md-input-container>
       <md-datepicker #picker></md-datepicker>
@@ -45,7 +45,7 @@
         <label for="checkbox1">Valider par mon empreinte digitale</label>
       </fieldset>
       <hr>
-      <button class="btn btn-ins btn-lg">Réserver</button>
+      <button class="btn btn-ins btn-lg" (click)="postReserver(reserv)">Réserver</button>
 
     </div>
 
