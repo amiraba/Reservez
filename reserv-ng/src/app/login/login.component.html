@@ -1,0 +1,50 @@
+<section class="section mt-3 center">
+  <div class="row">
+    <div class="col-lg-6 mb-r center">
+      <!-- Signup form -->
+
+      <div class="card">
+        <div class="card-block">
+
+          <div class="text-center">
+            <h3><i class="fa fa-user"></i>Login</h3>
+            <hr>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix"></i>
+            <input type="text" id="form2" class="form-control" placeholder="Votre email" [(ngModel)]='client.email'>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-lock prefix"></i>
+            <input type="password" id="form3" class="form-control" placeholder="Votre mot de passe" [(ngModel)]='client.password'>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-ins btn-lg" (click)="popout2()">Login</button>
+          </div>
+
+          <!-- SCRIPTS -->
+
+          <!-- JQuery -->
+          <script type="text/javascript" src="../../../js/jquery-3.1.1.min.js"></script>
+
+          <!-- Tooltips -->
+          <script type="text/javascript" src="../../../js/tether.min.js"></script>
+
+          <!-- Bootstrap core JavaScript -->
+          <script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+
+          <!-- MDB core JavaScript -->
+          <script type="text/javascript" src="../../../js/mdb.min.js"></script>
+
+          <script>
+            new WOW().init();
+          </script>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

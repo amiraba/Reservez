@@ -15,10 +15,13 @@ import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule, MdDatepickerMo
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2restaurant.component';
 
-import {FormsModule} from "@angular/forms"
+import {FormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component'
 
 const appRoutes: Routes = [
-  { path: 'offreRes', component: OffreResComponent }
+  { path: '', component: OffreResComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
@@ -26,7 +29,8 @@ const appRoutes: Routes = [
     AppComponent,
     OffreResComponent,
     ReserverComponent,
-    Reserver2restaurantComponent
+    Reserver2restaurantComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(
