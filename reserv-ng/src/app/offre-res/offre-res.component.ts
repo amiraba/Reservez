@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { OffreResService } from './offre-res.service';
-import { OffreRes } from './offreRes';
+import { OffreResService } from '../_services/offre-res.service';
+import { OffreRes } from '../_models/offreRes';
 import {Observable} from 'rxjs';
 import {MdDialog} from '@angular/material';
 import {ReserverComponent} from "../reserver/reserver.component";

@@ -31,18 +31,17 @@
 
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
-      <input type="text" id="form2" class="form-control" placeholder="Choisissez votre créneau horaire">
+      <input type="text" id="form2" class="form-control" placeholder="Choisissez votre créneau horaire" [(ngModel)]="reserv.creneauHoraire">
     </div>
 
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
-      <input type="text" id="form3" class="form-control">
-      <label for="form3">Notes</label>
+      <input type="text" id="form3" class="form-control"  placeholde="Notes" [(ngModel)]="reserv.notes">
     </div>
 
     <div class="text-center">
       <fieldset class="form-group">
-        <input type="checkbox" id="checkbox1">
+        <input type="checkbox" id="checkbox1" [(ngModel)]="reserv.valideeParCarteBlueue">
         <label for="checkbox1">Valider par mon empreinte digitale</label>
       </fieldset>
       <hr>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { OffreResService } from './offre-res/offre-res.service';
+import { OffreResService } from './_services/offre-res.service';
 
 import { OnInit } from '@angular/core';
 

@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { OffreResComponent } from './offre-res/offre-res.component';
 import { ReserverComponent } from './reserver/reserver.component';
 
-import { OffreResService } from './offre-res/offre-res.service';
+import { OffreResService } from './_services/offre-res.service';
 
 import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule, MdDatepickerModule, MdNativeDateModule, MdInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2restaurant.component';
+
+import {FormsModule} from "@angular/forms"
 
 const appRoutes: Routes = [
   { path: 'offreRes', component: OffreResComponent }
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MdDatepickerModule,
     MdNativeDateModule,
-    MdInputModule
+    MdInputModule,
+    FormsModule
   ],
   providers: [
     OffreResService

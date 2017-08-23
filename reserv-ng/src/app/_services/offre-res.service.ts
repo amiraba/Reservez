@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import {Observable} from 'rxjs';
-import { OffreRes } from './offreRes';
+import { OffreRes } from '../_models/offreRes';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -16,19 +16,7 @@ export class OffreResService {
   });
 
   constructor(private http: Http) { }
-  /*
-  getOffreRes(){
-    return this.http.get('http://localhost:3000/api/offreReservs')
-      .subscribe( (data) => console.log(data) );
 
-  }
-  */
-  /*
-    //:Promise<OffreRes[]> 
-    .toPromise()
-    .then(response => response.json().data as OffreRes[])
-    .catch(this.handleError);
-  */
   getOffreRes(): Observable<OffreRes[]> {
     let url="http://localhost:3000/api/offreReservs";
 

@@ -1,0 +1,46 @@
+{
+  "name": "reservation",
+  "plural": "reservations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "service": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "creneauHoraire": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "string"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "montant": {
+      "type": "number"
+    },
+    "nb_places": {
+      "type": "number",
+      "required": true
+    },
+    "id_offreRes": {
+      "type": "string"
+    },
+    "id_client": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

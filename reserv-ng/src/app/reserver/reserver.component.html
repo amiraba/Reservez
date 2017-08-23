@@ -20,25 +20,21 @@
         <!--Body-->
         <div class="md-form">
             <i class="fa fa-user prefix"></i>
-            <input type="text" id="form1" class="form-control" placeholder="Votre nom">
+            <input type="text" id="form1" class="form-control" placeholder="Votre nom" [(ngModel)]='client.nom'>
         </div>
         <div class="md-form">
             <i class="fa fa-envelope prefix"></i>
-            <input type="text" id="form2" class="form-control" placeholder="Votre email">
+            <input type="text" id="form2" class="form-control" placeholder="Votre email" [(ngModel)]='client.email'>
         </div>
 
       <div class="md-form">
         <i class="fa fa-envelope prefix"></i>
-        <input type="text" id="form3" class="form-control" placeholder="Votre numéro de téléphone">
+        <input type="text" id="form3" class="form-control" placeholder="Votre numéro de téléphone" [(ngModel)]='client.tel'>
       </div>
 
         <div class="text-center">
             <button class="btn btn-ins btn-lg" (click)="popout2()">Suivant</button>
         </div>
-
-
-
-
 
     <!-- SCRIPTS -->
 

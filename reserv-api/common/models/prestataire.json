@@ -27,6 +27,9 @@
       "type": "string",
       "required": true
     },
+    "description": {
+      "type": "string"
+    },
     "heure_douverture": {
       "type": "string"
     },
@@ -38,6 +41,14 @@
       "required": true
     },
     "photo_prestataire": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
       "type": "string",
       "required": true
     }

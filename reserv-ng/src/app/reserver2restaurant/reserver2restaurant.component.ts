@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import {MD_DIALOG_DATA, MdDatepicker} from '@angular/material';
+import { DataOffreResAndClient } from '../_models/DataOffreResAndClient';
+import { Reservation } from '../_models/Reservation';
 
 
 @Component({
@@ -9,10 +11,14 @@ import {MD_DIALOG_DATA, MdDatepicker} from '@angular/material';
 })
 export class Reserver2restaurantComponent implements OnInit {
 
-  constructor(@Inject(MD_DIALOG_DATA) public offreRes: any) { }
+  reserv: Reservation;
+
+  constructor(@Inject(MD_DIALOG_DATA) public dataOffreResAndClient: DataOffreResAndClient) {
+    this.reserv= new Reservation();
+  }
 
   ngOnInit() {
-    console.log("bla2:"+this.offreRes.id);
+
   }
 
 }
