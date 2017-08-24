@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import {Component, OnChanges} from '@angular/core';
+import { ApplicationRef   } from '@angular/core';
 import { OffreResService } from './_services/offre-res.service';
 
 import { OnInit } from '@angular/core';
@@ -15,21 +15,26 @@ export class AppComponent implements OnInit{
   title = 'app';
   connected: boolean;
 
-  constructor(private loginService: LoginService, private router: Router) {
+  cnx_seConnecter="Se connecter";
+  cnx_creerUnCompte= "Créer un compte";
+  cnx_deconnexion="Déconnexion";
 
-
+  constructor(private loginService: LoginService, private router: Router , private applicationRef : ApplicationRef ) {
   }
 
   ngOnInit(): void {
-    console.log(this.loginService.isLoggedIn());
     this.connected= this.loginService.isLoggedIn();
-    this.router.events.subscribe((val) => {
-      console.log("event");
-      this.connected= this.loginService.isLoggedIn();
-    });
   }
 
   logout(){
     this.loginService.logout();
+    this.connected= this.loginService.isLoggedIn();
+    this.router.navigate(['']);
+
+  }
+  changeCnxStuff(){
+    this.cnx_seConnecter="";
+    this.cnx_creerUnCompte= "";
+    this.cnx_deconnexion="Déconnexion";
   }
 }
