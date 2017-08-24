@@ -21,6 +21,8 @@ import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2res
 import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { ClientMesReservComponent } from './client-mes-reserv/client-mes-reserv.component'
+import {AlertService} from "./_services/alert.service";
+import { AlertComponent } from './alert/alert.component';
 
 const appRoutes: Routes = [
   { path: 'clientMesReserv',
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     ReserverComponent,
     Reserver2restaurantComponent,
     LoginComponent,
-    ClientMesReservComponent
+    ClientMesReservComponent,
+    AlertComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -61,6 +64,7 @@ const appRoutes: Routes = [
     OffreResService,
     ReservationService,
     LoginService,
+    AlertService,
     AUTH_PROVIDERS,
     LoggedInGuard
   ],

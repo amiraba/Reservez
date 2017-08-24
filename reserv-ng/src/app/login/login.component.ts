@@ -10,6 +10,7 @@ import {UserCredentials} from "../_models/UserCredentials";
 export class LoginComponent implements OnInit {
   userCredentials;
 
+
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
@@ -17,8 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.loginService.login(this.userCredentials);
-
+    var b= this.loginService.login(this.userCredentials);
   }
 
 }
