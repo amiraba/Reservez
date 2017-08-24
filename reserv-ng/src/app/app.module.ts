@@ -11,18 +11,25 @@ import { ReserverComponent } from './reserver/reserver.component';
 import { OffreResService } from './_services/offre-res.service';
 import { ReservationService } from './_services/reservation.service';
 import { LoginService } from './_services/login.service';
+import { LoggedInGuard } from './_guards/logged-in.guard';
+import { AUTH_PROVIDERS } from './_services/login.service';
 
 import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule, MdDatepickerModule, MdNativeDateModule, MdInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2restaurant.component';
 
 import {FormsModule} from "@angular/forms";
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { ClientMesReservComponent } from './client-mes-reserv/client-mes-reserv.component'
 
 const appRoutes: Routes = [
-  { path: '', component: OffreResComponent },
+  { path: 'clientMesReserv',
+    canActivate: [ LoggedInGuard ],
+    component: ClientMesReservComponent
+  },
   { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: 'login' }
+  { path: '', component: OffreResComponent }
+
 ];
 
 @NgModule({
@@ -31,7 +38,8 @@ const appRoutes: Routes = [
     OffreResComponent,
     ReserverComponent,
     Reserver2restaurantComponent,
-    LoginComponent
+    LoginComponent,
+    ClientMesReservComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -52,7 +60,9 @@ const appRoutes: Routes = [
   providers: [
     OffreResService,
     ReservationService,
-    LoginService
+    LoginService,
+    AUTH_PROVIDERS,
+    LoggedInGuard
   ],
   entryComponents: [
     ReserverComponent,

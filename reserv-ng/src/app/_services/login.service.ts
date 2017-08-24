@@ -9,7 +9,6 @@ import {isLoop} from "tslint";
 
 @Injectable()
 export class LoginService {
-  isLoggedIn: boolean = false;
 
   constructor(private http: Http) { }
 
@@ -27,11 +26,25 @@ export class LoginService {
         let client = response.json();
         if (client && client.id) { //client.id howa e token
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          this.isLoggedIn= true;
           localStorage.setItem('currentUserToken', JSON.stringify(client));
+        }else{
+
         }
         return client;
       });
     }
 
+    isLoggedIn(): boolean{
+      var currenUserToken= localStorage.getItem('currentUserToken');
+      if (currenUserToken){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
 }
+
+export const AUTH_PROVIDERS: Array<any> = [
+   { provide: LoginService, useClass: LoginService }
+  ];
