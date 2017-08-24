@@ -23,10 +23,14 @@ import { LoginComponent } from './login/login.component';
 import { ClientMesReservComponent } from './client-mes-reserv/client-mes-reserv.component'
 import {AlertService} from "./_services/alert.service";
 import { AlertComponent } from './alert/alert.component';
+import { RegisterComponent } from './register/register.component';
+import {RegisterService} from "./_services/register.service";
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
   { path: 'clientMesReserv',
     canActivate: [ LoggedInGuard ],
     component: ClientMesReservComponent
@@ -45,7 +49,8 @@ const appRoutes: Routes = [
     Reserver2restaurantComponent,
     LoginComponent,
     ClientMesReservComponent,
-    AlertComponent
+    AlertComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -68,6 +73,7 @@ const appRoutes: Routes = [
     ReservationService,
     LoginService,
     AlertService,
+    RegisterService,
     AUTH_PROVIDERS,
     LoggedInGuard
   ],

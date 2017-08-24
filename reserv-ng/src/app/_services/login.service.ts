@@ -60,6 +60,11 @@ export class LoginService {
         return false;
       }
     }
+
+
+    logout(){
+      localStorage.removeItem('currentUserToken');
+    }
 }
 
 export const AUTH_PROVIDERS: Array<any> = [

@@ -28,4 +28,8 @@ export class AppComponent implements OnInit{
       this.connected= this.loginService.isLoggedIn();
     });
   }
+
+  logout(){
+    this.loginService.logout();
+  }
 }

@@ -21,7 +21,9 @@ export class LoginComponent implements OnInit {
 
   login(){
     var b= this.loginService.login(this.userCredentials);
-    this.router.navigate([this.returnUrl || "?refresh=1"]);
+    this.router.navigate([this.returnUrl]); //|| "?refresh=1"
   }
+
+
 
 }
