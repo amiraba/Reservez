@@ -25,12 +25,15 @@ import {AlertService} from "./_services/alert.service";
 import { AlertComponent } from './alert/alert.component';
 
 const appRoutes: Routes = [
+  { path: '', component: OffreResComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'clientMesReserv',
     canActivate: [ LoggedInGuard ],
     component: ClientMesReservComponent
   },
-  { path: 'login', component: LoginComponent },
-  { path: '', component: OffreResComponent }
+
+
+  { path: '**', component: LoginComponent }
 
 ];
 

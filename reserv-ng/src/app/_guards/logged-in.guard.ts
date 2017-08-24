@@ -15,7 +15,7 @@ export class LoggedInGuard implements CanActivate {
     var isLoggedIn = this.loginService.isLoggedIn();
     console.log('canActivate', isLoggedIn);
     if (!isLoggedIn){
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login'], {queryParams: {returnUrl: state.url}});
     }
     return isLoggedIn;
 
