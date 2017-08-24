@@ -26,15 +26,10 @@ export class AppComponent implements OnInit{
     this.connected= this.loginService.isLoggedIn();
   }
 
+
   logout(){
     this.loginService.logout();
     this.connected= this.loginService.isLoggedIn();
     this.router.navigate(['']);
-
-  }
-  changeCnxStuff(){
-    this.cnx_seConnecter="";
-    this.cnx_creerUnCompte= "";
-    this.cnx_deconnexion="Déconnexion";
   }
 }

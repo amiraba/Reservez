@@ -41,19 +41,20 @@
               <ul class="nav navbar-nav nav-flex-icons">
                 <div *ngIf="connected==false; else elseBlock">
                   <li class="nav-item btn-group">
-                    <a [routerLink]="['/login']" class="nav-link" (click)="changeCnxStuff()">{{cnx_seConnecter}}</a>
+                    <a [routerLink]="['/login']" class="nav-link">{{cnx_seConnecter}}</a>
                   </li>
                   <li class="nav-item btn-group">
                     <a [routerLink]="['/register']" class="nav-link">{{cnx_creerUnCompte}}</a>
                   </li>
                 </div>
-                <!--
+
                 <ng-template #elseBlock>
                   <li class="nav-item btn-group">
                     <a (click)="logout()" class="nav-link">{{cnx_deconnexion}}</a>
                   </li>
                 </ng-template>
-                -->
+
+
 
                   <li class="nav-item">
                       <a href="#!" class="nav-link"><i class="fa fa-facebook"></i></a>
