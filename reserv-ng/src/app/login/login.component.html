@@ -13,16 +13,16 @@
 
           <div class="md-form">
             <i class="fa fa-envelope prefix"></i>
-            <input type="text" id="form2" class="form-control" placeholder="Votre email" [(ngModel)]='client.email'>
+            <input type="text" id="form2" class="form-control" placeholder="Votre email" [(ngModel)]='userCredentials.email'>
           </div>
 
           <div class="md-form">
             <i class="fa fa-lock prefix"></i>
-            <input type="password" id="form3" class="form-control" placeholder="Votre mot de passe" [(ngModel)]='client.password'>
+            <input type="password" id="form3" class="form-control" placeholder="Votre mot de passe" [(ngModel)]='userCredentials.password'>
           </div>
 
           <div class="text-center">
-            <button class="btn btn-ins btn-lg" (click)="popout2()">Login</button>
+            <button class="btn btn-ins btn-lg" (click)="login()">Login</button>
           </div>
 
           <!-- SCRIPTS -->
