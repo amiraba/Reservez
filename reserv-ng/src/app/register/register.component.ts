@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.register(this.client);
 
     let userCredentials= new UserCredentials();
+    console.log(this.client.email+"     "+this.client.email);
     userCredentials.email=this.client.email;
     userCredentials.password=this.client.password;
     var b= this.loginService.login(userCredentials);

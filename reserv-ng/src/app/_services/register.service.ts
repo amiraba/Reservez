@@ -14,7 +14,7 @@ export class RegisterService {
   register(client: Client): Promise<Client> {
     const url = `http://localhost:3000/api/clients`;
     return this.http
-      .put(url, JSON.stringify(client), {headers: this.headers})
+      .post(url, JSON.stringify(client), {headers: this.headers})
       .toPromise()
       .then(() => client)
       .catch(this.handleError);
