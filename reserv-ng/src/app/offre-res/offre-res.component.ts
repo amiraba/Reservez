@@ -5,6 +5,12 @@ import { OffreRes } from '../_models/offreRes';
 import {Observable} from 'rxjs';
 import {MdDialog} from '@angular/material';
 import {ReserverComponent} from "../reserver/reserver.component";
+import {Reserver2restaurantComponent} from "../reserver2restaurant/reserver2restaurant.component";
+import {LoginService} from "../_services/login.service";
+import {DataOffreResAndClient} from "../_models/DataOffreResAndClient";
+import {ClientService} from "../_services/client.service";
+import {Client} from "../_models/Client";
+
 
 @Component({
   selector: 'app-offre-res',
@@ -14,13 +20,24 @@ import {ReserverComponent} from "../reserver/reserver.component";
 export class OffreResComponent implements OnInit {
 
   offreReservs: OffreRes[] =[];
+  client: Client;
 
-  constructor(private OffreResService: OffreResService, private dialog: MdDialog) { }
+  constructor(private OffreResService: OffreResService, private dialog: MdDialog, public loginService: LoginService, private clientService: ClientService) { }
 
   ngOnInit(): void {
     this.OffreResService.getOffreRes()
     .subscribe (res => {
       this.offreReservs=res;
+      if (this.loginService.isLoggedIn()==true){
+
+        this.clientService.getLoggedInClient()
+          .subscribe (res => {
+            this.client=res;
+          }, err => {
+            console.log(err);
+          });
+
+      }
       //console.log(this.offreReservs);
       }, err => {
         console.log(err);
@@ -39,14 +56,27 @@ export class OffreResComponent implements OnInit {
   }
   popout(offreRes){
     //console.log(offreRes.titre);
-    let dialogRef = this.dialog.open(ReserverComponent, {
-      data: offreRes,
-      height: '60%',
-      width: '70%'
-    });
+    if (this.loginService.isLoggedIn()==true){
+      let dataOffreResAndClient: DataOffreResAndClient= new DataOffreResAndClient();
+      dataOffreResAndClient.offreRes=offreRes;
+      dataOffreResAndClient.client=this.client;
 
-    dialogRef.afterClosed().subscribe(result => {
-    });
+      let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
+        data: dataOffreResAndClient,
+        height: '60%',
+        width: '70%'
+      });
+
+    }else{
+
+      let dialogRef = this.dialog.open(ReserverComponent, {
+        data: offreRes,
+        height: '60%',
+        width: '70%'
+      });
+
+    }
+    //dialogRef.afterClosed().subscribe(result => {});
   }
 
 }

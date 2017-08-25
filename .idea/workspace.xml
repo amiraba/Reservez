@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49ccb61e-e8ce-4031-bf19-5b03af8a5144" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.spec.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.spec.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/_services/register.service.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/_services/register.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/app.component.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/app.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/app.module.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/app.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,31 +26,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="reservation.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/reservation.service.ts">
+      <file leaf-file-name="offre-res.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="46" />
+            <state relative-caret-position="283">
+              <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reserver.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts">
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="43" />
+            <state relative-caret-position="126">
+              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="offre-res.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/offre-res.service.ts">
+      <file leaf-file-name="login.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="294">
+              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reserver2restaurant.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -60,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts">
+      <file leaf-file-name="Reservation.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -75,7 +129,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>popo</find>
-      <find>offreRes</find>
       <find>http</find>
       <find>Router</find>
       <find>login</find>
@@ -85,6 +138,10 @@
       <find>twitt</find>
       <find>cnx</find>
       <find>change</find>
+      <find>offreRes</find>
+      <find>RegisterServ</find>
+      <find>LoginService</find>
+      <find>isLoop</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\amira\Desktop\R\reserv-ng\src\app</dir>
@@ -99,12 +156,10 @@
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/just" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.css" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.html" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offreRes.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/DataOffreResAndClient.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/offreRes.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/offre-res.service.ts" />
         <option value="$PROJECT_DIR$/reserv-api/common/models/client.json" />
@@ -114,8 +169,6 @@
         <option value="$PROJECT_DIR$/reserv-api/common/models/prestataire.json" />
         <option value="$PROJECT_DIR$/reserv-api/common/models/reservation.json" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.html" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.css" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/UserCredentials.ts" />
@@ -133,15 +186,21 @@
         <option value="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.css" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/cnx-header/cnx-header.component.html" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/cnx-header/cnx-header.component.ts" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/decnx/decnx.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/decnx/decnx.component.html" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/register.service.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/login.service.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts" />
       </list>
     </option>
   </component>
@@ -162,7 +221,7 @@
     <handled-path value="$PROJECT_DIR$/reserv-api/node_modules" />
     <handled-path value="$PROJECT_DIR$/reserv-ng/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -183,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,14 +274,21 @@
               <item name="reserv-ng" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="_services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Reservez" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reservez" type="462c0819:PsiDirectoryNode" />
+              <item name="reserv-ng" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="offre-res" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,6 +299,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amira\Desktop\Reservez\reserv-ng\src\app\_services" />
       <recent name="C:\Users\amira\Desktop\R\reserv-ng\src\app\_services" />
       <recent name="C:\Users\amira\Desktop\R\reserv-ng\src\app\_guards" />
       <recent name="C:\Users\amira\Desktop\R\reserv-ng\src\app" />
@@ -267,15 +335,16 @@
       <workItem from="1503560832043" duration="17906000" />
       <workItem from="1503583756910" duration="11823000" />
       <workItem from="1503645831520" duration="1221000" />
-      <workItem from="1503669827962" duration="493000" />
+      <workItem from="1503669827962" duration="2839000" />
+      <workItem from="1503672703249" duration="640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61320000" />
+    <option name="totallyTimeSpent" value="64306000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -310,27 +379,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/DataOffreResAndClient.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-api/common/models/offre-reserv.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-api/common/models/prestataire.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/offreRes.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -380,18 +428,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/UserCredentials.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -488,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/login/login.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -516,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
@@ -534,24 +560,11 @@
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/cnx-header/cnx-header.component.ts" />
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/decnx/decnx.component.html" />
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/decnx/decnx.component.ts" />
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="903">
           <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -573,13 +586,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -591,19 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,9 +619,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_models/Client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -635,11 +689,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts">
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

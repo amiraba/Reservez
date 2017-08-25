@@ -28,8 +28,8 @@ export class Reserver2restaurantComponent implements OnInit {
     this.reserv.statut="ok";
     this.reserv.montant=100;
     this.reserv.nb_places=1;
-    this.reserv.id_offreRes="5990e9a1fbaa6f3e8c444a24";
-    this.reserv.id_client="599adb1fc4931d4594d18069";
+    this.reserv.id_offreRes=this.dataOffreResAndClient.offreRes.id_offreRes;
+    this.reserv.id_client=this.dataOffreResAndClient.client.id;
     this.reservationService.postReserv(reserv);
     this.dialog.closeAll();
   }

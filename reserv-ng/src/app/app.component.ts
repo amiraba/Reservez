@@ -3,8 +3,8 @@ import { ApplicationRef   } from '@angular/core';
 import { OffreResService } from './_services/offre-res.service';
 
 import { OnInit } from '@angular/core';
-import {LoginService} from "./_services/login.service";
 import {Router} from "@angular/router";
+import {LoginService} from './_services/login.service';
 
 @Component({
   selector: 'app-root',

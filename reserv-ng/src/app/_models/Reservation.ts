@@ -7,7 +7,7 @@ export class Reservation {
   statut; string;
   montant: number;
   nb_places: number;
-  id_offreRes: string;
-  id_client: string;
+  id_offreRes: number;
+  id_client: number;
   valideeParCarteBlueue: boolean;
 }

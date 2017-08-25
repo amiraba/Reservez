@@ -25,6 +25,7 @@ import {AlertService} from "./_services/alert.service";
 import { AlertComponent } from './alert/alert.component';
 import { RegisterComponent } from './register/register.component';
 import {RegisterService} from "./_services/register.service";
+import {ClientService} from "./_services/client.service";
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
     LoginService,
     AlertService,
     RegisterService,
+    ClientService,
     AUTH_PROVIDERS,
     LoggedInGuard
   ],
