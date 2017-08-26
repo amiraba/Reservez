@@ -15,6 +15,7 @@ export class ReserverComponent implements OnInit {
 
   client: Client;
   dataOffreResAndClient: DataOffreResAndClient;
+  creerNouveauCompte;
 
   constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public offreRes: OffreRes) {
     this.client= new Client();
