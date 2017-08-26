@@ -6,6 +6,10 @@ import {MdDialog} from '@angular/material';
 import { ReservationService } from '../_services/reservation.service';
 import {DataOffreResAndClientAndState} from "../_models/DataOffreResAndClientAndState";
 import {LoginService} from "../_services/login.service";
+import {UserCredentials} from "../_models/UserCredentials";
+import {RegisterService} from "../_services/register.service";
+import {AppComponent} from "../app.component";
+import {ClientService} from "../_services/client.service";
 
 @Component({
   selector: 'app-reserver2restaurant',
@@ -18,7 +22,10 @@ export class Reserver2restaurantComponent implements OnInit {
 
   constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
               private reservationService: ReservationService,
-              private loginService: LoginService) {
+              private loginService: LoginService,
+              private registerService: RegisterService,
+              private appComponent: AppComponent,
+              private clientService: ClientService) {
     this.reserv= new Reservation();
   }
 
@@ -34,10 +41,32 @@ export class Reserver2restaurantComponent implements OnInit {
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id_offreRes;
 
     if (this.loginService.isLoggedIn()==true){
-      this.reserv.id_client=this.dataOffreResAndClientAndState.client.id;
+      this.clientService.getLoggedInClient()
+        .subscribe (res => {
+          this.reserv.id_client=res.id;
+        }, err => {
+          console.log(err);
+        });
     }else{
       if ( this.dataOffreResAndClientAndState.creerNouveauCompte == false){
         this.reserv.email_client=this.dataOffreResAndClientAndState.client.email;
+      }else{
+        //register
+        this.registerService.register(this.dataOffreResAndClientAndState.client);
+        //login
+        let userCredentials= new UserCredentials();
+        userCredentials.email=this.dataOffreResAndClientAndState.client.email;
+        userCredentials.password=this.dataOffreResAndClientAndState.client.password;
+        var b= this.loginService.login(userCredentials);
+        this.appComponent.connected= this.loginService.isLoggedIn();
+        console.log(this.loginService.isLoggedIn());
+
+        this.clientService.getLoggedInClient()
+          .subscribe (res => {
+            this.reserv.id_client=res.id;
+          }, err => {
+            console.log(err);
+          });
       }
     }
 
