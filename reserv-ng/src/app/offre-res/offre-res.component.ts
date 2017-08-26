@@ -7,9 +7,9 @@ import {MdDialog} from '@angular/material';
 import {ReserverComponent} from "../reserver/reserver.component";
 import {Reserver2restaurantComponent} from "../reserver2restaurant/reserver2restaurant.component";
 import {LoginService} from "../_services/login.service";
-import {DataOffreResAndClient} from "../_models/DataOffreResAndClient";
 import {ClientService} from "../_services/client.service";
 import {Client} from "../_models/Client";
+import {DataOffreResAndClientAndState} from "../_models/DataOffreResAndClientAndState";
 
 
 @Component({
@@ -57,12 +57,12 @@ export class OffreResComponent implements OnInit {
   popout(offreRes){
     //console.log(offreRes.titre);
     if (this.loginService.isLoggedIn()==true){
-      let dataOffreResAndClient: DataOffreResAndClient= new DataOffreResAndClient();
-      dataOffreResAndClient.offreRes=offreRes;
-      dataOffreResAndClient.client=this.client;
+      let dataOffreResAndClientAndState: DataOffreResAndClientAndState= new DataOffreResAndClientAndState();
+      dataOffreResAndClientAndState.offreRes=offreRes;
+      dataOffreResAndClientAndState.client=this.client;
 
       let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
-        data: dataOffreResAndClient,
+        data: dataOffreResAndClientAndState,
         height: '60%',
         width: '70%'
       });

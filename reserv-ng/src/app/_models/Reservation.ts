@@ -9,5 +9,6 @@ export class Reservation {
   nb_places: number;
   id_offreRes: number;
   id_client: number;
+  email_client: string;
   valideeParCarteBlueue: boolean;
 }

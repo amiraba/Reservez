@@ -1,10 +1,11 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import {MD_DIALOG_DATA, MdDatepicker} from '@angular/material';
-import { DataOffreResAndClient } from '../_models/DataOffreResAndClient';
 import { Reservation } from '../_models/Reservation';
 import {MdDialog} from '@angular/material';
 
 import { ReservationService } from '../_services/reservation.service';
+import {DataOffreResAndClientAndState} from "../_models/DataOffreResAndClientAndState";
+import {LoginService} from "../_services/login.service";
 
 @Component({
   selector: 'app-reserver2restaurant',
@@ -15,7 +16,9 @@ export class Reserver2restaurantComponent implements OnInit {
 
   reserv: Reservation;
 
-  constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClient: DataOffreResAndClient, private reservationService: ReservationService) {
+  constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
+              private reservationService: ReservationService,
+              private loginService: LoginService) {
     this.reserv= new Reservation();
   }
 
@@ -24,12 +27,20 @@ export class Reserver2restaurantComponent implements OnInit {
   }
 
   postReserver(reserv){
-    this.reserv.service=this.dataOffreResAndClient.offreRes.service;
+    this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
     this.reserv.montant=100;
     this.reserv.nb_places=1;
-    this.reserv.id_offreRes=this.dataOffreResAndClient.offreRes.id_offreRes;
-    this.reserv.id_client=this.dataOffreResAndClient.client.id;
+    this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id_offreRes;
+
+    if (this.loginService.isLoggedIn()==true){
+      this.reserv.id_client=this.dataOffreResAndClientAndState.client.id;
+    }else{
+      if ( this.dataOffreResAndClientAndState.creerNouveauCompte == false){
+        this.reserv.email_client=this.dataOffreResAndClientAndState.client.email;
+      }
+    }
+
     this.reservationService.postReserv(reserv);
     this.dialog.closeAll();
   }
