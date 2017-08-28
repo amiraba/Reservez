@@ -17,7 +17,7 @@ import {ClientService} from "../_services/client.service";
   styleUrls: ['./reserver2restaurant.component.css']
 })
 export class Reserver2restaurantComponent implements OnInit {
-
+  x:string;
   reserv: Reservation;
 
   constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
@@ -40,17 +40,28 @@ export class Reserver2restaurantComponent implements OnInit {
     this.reserv.nb_places=1;
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
     console.log(this.dataOffreResAndClientAndState);
+    console.log(this.reserv.id_offreRes);
 
     if (this.loginService.isLoggedIn()==true){
       this.clientService.getLoggedInClient()
         .subscribe (res => {
+          console.log("a333333! "+ res.id);
           this.reserv.id_client=res.id+'';
+          this.reservationService.postReserv(reserv);
+          this.dialog.closeAll();
+
         }, err => {
           console.log(err);
         });
+
+
     }else{
       if ( this.dataOffreResAndClientAndState.creerNouveauCompte == false){
+
         this.reserv.email_client=this.dataOffreResAndClientAndState.client.email;
+        this.reservationService.postReserv(reserv);
+        this.dialog.closeAll();
+
       }else{
         //register
         console.log("iiiiiiiiin - reserver2restaurant.postReserv else else - debut");
