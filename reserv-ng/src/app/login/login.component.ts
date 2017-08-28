@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
     var b= this.loginService.login(this.userCredentials);
     this.appComponent.connected= this.loginService.isLoggedIn();
+    console.log("this.appComponent.connected= this.loginService.isLoggedIn();"+ this.appComponent.connected);
     this.router.navigate(['']);
     //this.router.navigate([this.returnUrl]); //|| "?refresh=1"
 

@@ -21,6 +21,7 @@ export class ClientService {
 
   getLoggedInClient(): Observable<Client> {
     let id= this.getLoggedInClientId();
+    console.log(id);
     let url="http://localhost:3000/api/clients/"+id;
 
     return this.http.get(url, {headers: this.headers})

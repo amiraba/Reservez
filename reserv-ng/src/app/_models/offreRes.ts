@@ -1,5 +1,5 @@
 export class OffreRes {
-    id_offreRes: number;
+    id: number;
     titre : string;
     service: string;
     description: string;

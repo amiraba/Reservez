@@ -39,6 +39,7 @@ export class LoginService {
         },
         ()=>{
           console.log("return now: "+ b);
+          console.log(this.isLoggedIn());
           return b;
         });
 
@@ -49,12 +50,16 @@ export class LoginService {
   isLoggedIn(): boolean{
     var currenUserToken= localStorage.getItem('currentUserToken');
     if (currenUserToken){
+      console.log("in login.service/isLoggedIn: currentUserToken == " + true);
       return true;
     }
     else {
+      console.log("in login.service/isLoggedIn: currentUserToken == "+ false);
       return false;
     }
   }
+
+
   logout(){
     localStorage.removeItem('currentUserToken');
 

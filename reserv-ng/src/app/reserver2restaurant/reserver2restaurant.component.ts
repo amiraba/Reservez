@@ -38,12 +38,13 @@ export class Reserver2restaurantComponent implements OnInit {
     this.reserv.statut="ok";
     this.reserv.montant=100;
     this.reserv.nb_places=1;
-    this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id_offreRes;
+    this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
+    console.log(this.dataOffreResAndClientAndState);
 
     if (this.loginService.isLoggedIn()==true){
       this.clientService.getLoggedInClient()
         .subscribe (res => {
-          this.reserv.id_client=res.id;
+          this.reserv.id_client=res.id+'';
         }, err => {
           console.log(err);
         });
@@ -52,26 +53,44 @@ export class Reserver2restaurantComponent implements OnInit {
         this.reserv.email_client=this.dataOffreResAndClientAndState.client.email;
       }else{
         //register
+        console.log("iiiiiiiiin - reserver2restaurant.postReserv else else - debut");
         this.registerService.register(this.dataOffreResAndClientAndState.client);
+        console.log("iiiiiiiiin - reserver2restaurant.postReserv after register");
         //login
         let userCredentials= new UserCredentials();
+        console.log("usrCred: "+this.dataOffreResAndClientAndState.client.email+" "+ this.dataOffreResAndClientAndState.client.password);
         userCredentials.email=this.dataOffreResAndClientAndState.client.email;
         userCredentials.password=this.dataOffreResAndClientAndState.client.password;
         var b= this.loginService.login(userCredentials);
-        this.appComponent.connected= this.loginService.isLoggedIn();
-        console.log(this.loginService.isLoggedIn());
+        console.log("iiiiiiiiin - reserver2restaurant.postReserv after login");
 
-        this.clientService.getLoggedInClient()
-          .subscribe (res => {
-            this.reserv.id_client=res.id;
-          }, err => {
-            console.log(err);
-          });
+        setTimeout(() => {
+          this.appComponent.connected= this.loginService.isLoggedIn();
+          console.log("iiiiiiiiin - reserver2restaurant.postReserv after isLoggedIn");
+          console.log(this.loginService.isLoggedIn());
+
+          this.clientService.getLoggedInClient()
+            .subscribe (res => {
+              console.log("res.id: "+res.id);
+              this.reserv.id_client=res.id+'';
+              console.log(this.dataOffreResAndClientAndState);
+              this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
+
+              console.log("iiiiiiiiin - reserver2restaurant.postReserv - fin");
+              this.reservationService.postReserv(reserv);
+              this.dialog.closeAll();
+            }, err => {
+              console.log(err);
+            });
+
+        }, 1000);
+
+
       }
+
     }
 
-    this.reservationService.postReserv(reserv);
-    this.dialog.closeAll();
+
   }
 
 }
