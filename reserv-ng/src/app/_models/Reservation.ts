@@ -1,8 +1,7 @@
 export class Reservation {
   id_reservation: number;
   service: string;
-  date: Date;
-  creneauHoraire: string;
+  dateEtHeure: Date;
   notes: string;
   statut; string;
   montant: number;

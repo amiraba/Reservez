@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Client} from '../../../../../issues/2-R/reserv-ng/src/app/_models/Client';
+import {Client} from '../../app/_models/Client';
 import {Http, Headers} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 

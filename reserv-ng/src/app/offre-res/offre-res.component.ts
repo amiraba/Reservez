@@ -63,16 +63,16 @@ export class OffreResComponent implements OnInit {
 
       let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
         data: dataOffreResAndClientAndState,
-        height: '60%',
-        width: '70%'
+        height: '67%',
+        width: '60%'
       });
 
     }else{
 
       let dialogRef = this.dialog.open(ReserverComponent, {
         data: offreRes,
-        height: '60%',
-        width: '70%'
+        height: '67%',
+        width: '60%'
       });
 
     }

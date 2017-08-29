@@ -37,8 +37,8 @@ export class ReserverComponent implements OnInit {
 
     let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
       data: this.dataOffreResAndClientAndState,
-      height: '60%',
-      width: '70%',
+      height: '90%',
+      width: '60%',
     });
 
 

@@ -26,6 +26,8 @@ import { AlertComponent } from './alert/alert.component';
 import { RegisterComponent } from './register/register.component';
 import {RegisterService} from "./_services/register.service";
 import {ClientService} from "./_services/client.service";
+import { MomentModule } from 'angular2-moment';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -67,7 +69,9 @@ const appRoutes: Routes = [
     MdDatepickerModule,
     MdNativeDateModule,
     MdInputModule,
-    FormsModule
+    FormsModule,
+    MomentModule,
+    DateTimePickerModule
   ],
   providers: [
     OffreResService,

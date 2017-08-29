@@ -11,12 +11,8 @@
       "type": "string",
       "required": true
     },
-    "date": {
+    "dateEtHeure": {
       "type": "date",
-      "required": true
-    },
-    "creneauHoraire": {
-      "type": "string",
       "required": true
     },
     "notes": {

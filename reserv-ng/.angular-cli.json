@@ -24,7 +24,8 @@
         "zina-offreRes/offreRes-css/bootstrap.min.css",
         "zina-offreRes/offreRes-css/mdb.css",
         "zina-offreRes/offreRes-css/mdb.min.css",
-        "zina-offreRes/offreRes-css/style.css"
+        "zina-offreRes/offreRes-css/style.css",
+        "../node_modules/ng-pick-datetime/styles/picker.min.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -19,6 +19,7 @@ import {ClientService} from "../_services/client.service";
 export class Reserver2restaurantComponent implements OnInit {
   x:string;
   reserv: Reservation;
+  momentVariable;
 
   constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
               private reservationService: ReservationService,
@@ -34,15 +35,17 @@ export class Reserver2restaurantComponent implements OnInit {
   }
 
   postReserver(reserv){
+    //console.log("momentValue -----------> "+ this.momentVariable);
     this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
     this.reserv.montant=100;
     this.reserv.nb_places=1;
+    this.reserv.dateEtHeure=this.momentVariable;
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
     console.log(this.dataOffreResAndClientAndState);
     console.log(this.reserv.id_offreRes);
 
-    if (this.loginService.isLoggedIn()==true){
+    if (this.loginService.isLoggedIn()==true) {
       this.clientService.getLoggedInClient()
         .subscribe (res => {
           console.log("a333333! "+ res.id);
