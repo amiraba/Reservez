@@ -32,9 +32,17 @@
                                 <!--Full width lightbox-->
                                 <div class="mdb-lightbox" style="padding: 30px" >
                                     <figure class="col-md-12">
-                                            <img src={{offreRes.photoOffreRes}} class="img-fluid">
+                                          <img src={{offreRes.photoOffreRes}} class="img-fluid">
+
+                                        <md-grid-list cols="3" rowHeight="50px">
+                                          <md-grid-tile [colspan]="2">
                                             <h5>{{offreRes.titre}}</h5>
-                                            <i class="material-icons" (click)="popout(offreRes)">book</i>
+                                          </md-grid-tile>
+
+                                          <md-grid-tile>
+                                            <i class="material-icons amira-icon" (click)="popout(offreRes)">book</i>
+                                          </md-grid-tile>
+                                        </md-grid-list>
                                     </figure>
                                 </div>
                             </div>
