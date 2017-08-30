@@ -1,4 +1,9 @@
-.amira-icon{
+.amira-icon-petit{
     font-size: 28px!important;
     cursor: pointer;
 }
+.amira-icon-grand{
+  font-size: 58px!important;
+  cursor: pointer;
+}
+

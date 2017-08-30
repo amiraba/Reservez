@@ -65,7 +65,7 @@ export class OffreResComponent implements OnInit {
 
       let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
         data: dataOffreResAndClientAndState,
-        height: '67%',
+        height: '75%',
         width: '60%'
       });
 
@@ -73,7 +73,7 @@ export class OffreResComponent implements OnInit {
 
       let dialogRef = this.dialog.open(ReserverComponent, {
         data: offreRes,
-        height: '67%',
+        height: '75%',
         width: '60%'
       });
 

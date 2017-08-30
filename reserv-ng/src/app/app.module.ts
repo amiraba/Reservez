@@ -18,7 +18,6 @@ import {MdDialog, MdGridListModule, MdIconModule, MdDialogModule, MdDatepickerMo
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Reserver2restaurantComponent } from './reserver2restaurant/reserver2restaurant.component';
 
-import {FormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { ClientMesReservComponent } from './client-mes-reserv/client-mes-reserv.component'
 import {AlertService} from "./_services/alert.service";
@@ -28,6 +27,7 @@ import {RegisterService} from "./_services/register.service";
 import {ClientService} from "./_services/client.service";
 import { MomentModule } from 'angular2-moment';
 import { DateTimePickerModule } from 'ng-pick-datetime';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -71,7 +71,8 @@ const appRoutes: Routes = [
     MdInputModule,
     FormsModule,
     MomentModule,
-    DateTimePickerModule
+    DateTimePickerModule,
+    ReactiveFormsModule
   ],
   providers: [
     OffreResService,
