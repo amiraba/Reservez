@@ -17,16 +17,30 @@ export class RegisterComponent implements OnInit {
   rForm;
 
   constructor(private registerService: RegisterService, private router: Router, private loginService: LoginService,
-              public appComponent: AppComponent,) {
+              public appComponent: AppComponent) {
     this.client=new Client();
   }
 
   ngOnInit() {
     this.rForm = new FormGroup({
-      'nom' : new FormControl ("", Validators.compose([ Validators.minLength(30), Validators.maxLength(500)] )),
-      'email' : new FormControl("", Validators.required),
-      'password' : new FormControl("", Validators.required),
-      'tel':  new FormControl("")
+      'nom' : new FormControl ("", Validators.compose([
+        Validators.minLength(3),
+        Validators.maxLength(50),
+        Validators.pattern("[a-zA-Z ]*"),
+        Validators.required
+      ])), // Le nom doit avoir au minimum 3 caractères alphabétiques
+      'email' : new FormControl("",  Validators.compose([
+          Validators.required,
+          Validators.pattern("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")
+        ])), // L'email n'est pas valide
+      'password' : new FormControl("", Validators.compose([
+          Validators.required,
+          Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"),
+        ])),// Le mot de passe doit contenir au moins un 6 caractères dont un en majuscule, en minuscule, un chiffre et un caractère spécial
+      'tel':  new FormControl("", Validators.compose([
+          Validators.minLength(8),
+          Validators.pattern("[0-9]+"),
+        ]))// Le numéro de téléphone n'est pas valide
     });
   }
 
@@ -44,7 +58,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-      console.log("*** Form Submitted! "+"this.registerForm.valid: "+this.rForm.valid);
       this.register();
   }
 
