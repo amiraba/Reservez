@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="49ccb61e-e8ce-4031-bf19-5b03af8a5144" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.html" afterPath="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.html" afterPath="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html" afterPath="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts" afterPath="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,42 +19,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/login/login.component.html">
+      <file leaf-file-name="reserver.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="-49">
+              <caret line="43" column="142" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="142" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/login/login.component.ts">
+      <file leaf-file-name="reserver.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alert.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/alert.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="37" column="113" lean-forward="false" selection-start-line="37" selection-start-column="113" selection-end-line="37" selection-end-column="113" />
-              <folding />
+            <state relative-caret-position="233">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#79#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,9 +69,11 @@
       <find>userCrede</find>
       <find>id</find>
       <find>pres</find>
-      <find>name</find>
       <find>forms</find>
       <find>echec</find>
+      <find>email</find>
+      <find>name</find>
+      <find>tel</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -139,10 +123,8 @@
         <option value="$PROJECT_DIR$/reserv-ng/src/app/login.service.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.html" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/DataOffreResAndClientAndState.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/offre-res/offre-res.component.ts" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_models/Reservation.ts" />
         <option value="$PROJECT_DIR$/reserv-api/common/models/reservation.json" />
@@ -150,11 +132,13 @@
         <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver2restaurant/reserver2restaurant.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/register.service.ts" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.html" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/_services/login.service.ts" />
         <option value="$PROJECT_DIR$/reserv-ng/src/app/login/login.component.html" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/register/register.component.html" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html" />
+        <option value="$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts" />
       </list>
     </option>
   </component>
@@ -175,7 +159,7 @@
     <handled-path value="$PROJECT_DIR$/reserv-api/node_modules" />
     <handled-path value="$PROJECT_DIR$/reserv-ng/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -221,14 +205,6 @@
               <item name="reserv-ng" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Reservez" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Reservez" type="462c0819:PsiDirectoryNode" />
-              <item name="reserv-ng" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="_services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Reservez" type="b2602c69:ProjectViewProjectNode" />
@@ -299,15 +275,15 @@
       <workItem from="1504085409943" duration="13008000" />
       <workItem from="1504101260536" duration="951000" />
       <workItem from="1504104227181" duration="2757000" />
-      <workItem from="1504107977418" duration="1033000" />
+      <workItem from="1504107977418" duration="5249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106812000" />
+    <option name="totallyTimeSpent" value="111028000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -488,13 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -506,13 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -605,7 +567,7 @@
         <state relative-caret-position="882">
           <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="9" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -618,28 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/_services/client.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
           <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="66" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -670,9 +614,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="546">
           <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/register/register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="47" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="43" column="142" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reserv-ng/src/app/reserver/reserver.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

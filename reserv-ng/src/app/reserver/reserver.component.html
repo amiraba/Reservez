@@ -16,37 +16,60 @@
             <h3><i class="fa fa-user"></i>Réservation</h3>
             <hr>
         </div>
+        <form [formGroup]="res1Form" (ngSubmit)="onSubmit()">
+              <!--Body-->
+              <div class="md-form">
+                  <i class="fa fa-user prefix"></i>
+                  <input type="text" id="form1" class="form-control" [(ngModel)]='client.nom' formControlName="nom" placeholder="Votre nom" required >
 
-        <!--Body-->
-        <div class="md-form">
-            <i class="fa fa-user prefix"></i>
-            <input type="text" id="form1" class="form-control" placeholder="Votre nom" [(ngModel)]='client.nom'>
-        </div>
-        <div class="md-form">
-            <i class="fa fa-envelope prefix"></i>
-            <input type="text" id="form2" class="form-control" placeholder="Votre email" [(ngModel)]='client.email'>
-        </div>
+                <div *ngIf="res1Form.controls['nom'].errors && !res1Form.controls['nom'].pristine" class="error-msg form-control-feedback alert alert-danger">
+                  <div [hidden]="!res1Form.controls['nom'].errors.required">Veuillez saisir votre nom.</div>
+                  <div [hidden]="!res1Form.controls['nom'].invalid">Votre nom doit avoir 3 caractères alphabétiques au minimum.</div>
+                  </div>
 
-      <div class="md-form">
-        <i class="fa fa-envelope prefix"></i>
-        <input type="text" id="form3" class="form-control" placeholder="Votre numéro de téléphone" [(ngModel)]='client.tel'>
-      </div>
+              </div>
 
-        <fieldset class="form-group">
-          <input #tata type="checkbox" id="checkbox1" [(ngModel)]="creerNouveauCompte">
-          <label for="checkbox1">Créer un nouveau compte</label>
-        </fieldset>
+              <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <input type="text" id="form2" class="form-control" [(ngModel)]='client.email' formControlName="email"  placeholder="Votre email" required >
 
-        <div class="md-form" *ngIf="tata.checked">
-          <i class="fa fa-lock prefix"></i>
-          <input type="password" id="form4" class="form-control" placeholder="Votre mot de passe" [(ngModel)]='client.password'>
-        </div>
+                <div *ngIf="res1Form.controls['email'].errors && !res1Form.controls['email'].pristine" class="error-msg form-control-feedback alert alert-danger">
+                  <div [hidden]="!res1Form.controls['email'].errors.required">Veuillez saisir votre email.</div>
+                  <div [hidden]="!res1Form.controls['email'].invalid">Votre email n'est pas valide.</div>
+                </div>
+              </div>
 
-        <div class="text-center" >
-            <button class="btn btn-ins btn-lg" (click)="popout2()">Suivant</button>
-            <button [routerLink]="['/login']" class="btn btn-ins btn-lg">J'ai un compte</button>
-        </div>
+              <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <input type="text" id="form3" class="form-control" placeholder="Votre numéro de téléphone" [(ngModel)]='client.tel' formControlName="tel">
 
+                <div *ngIf="res1Form.controls['tel'].errors && !res1Form.controls['tel'].pristine" class="error-msg form-control-feedback alert alert-danger">
+                  <div [hidden]="!res1Form.controls['tel'].invalid">Votre numéro de téléphone n'est pas valide.</div>
+                </div>
+              </div>
+
+                  <fieldset class="form-group">
+                    <input #tata type="checkbox" id="checkbox1" [(ngModel)]="creerNouveauCompte" formControlName="checking">
+                    <label for="checkbox1">Créer un nouveau compte</label>
+                  </fieldset>
+
+                  <div class="md-form" *ngIf="tata.checked">
+                    <i class="fa fa-lock prefix"></i>
+                    <input type="password" id="form4" class="form-control" placeholder="Votre mot de passe" [(ngModel)]='client.password' formControlName="password">
+
+                    <div *ngIf="res1Form.controls['password'].errors && !res1Form.controls['password'].pristine" class="error-msg form-control-feedback alert alert-danger">
+                      <div [hidden]="!res1Form.controls['password'].errors.required">Veuillez saisir votre mot de passe.</div>
+                      <div [hidden]="!res1Form.controls['password'].invalid">Le mot de passe doit contenir au moins un 6 caractères dont un en majuscule, en minuscule, un chiffre et un caractère spécial.</div>
+                    </div>
+
+                  </div>
+
+            <div class="text-center" >
+                <button type="submit" class="btn btn-ins btn-lg" [disabled]="!res1Form.valid" (click)="popout2()">Suivant</button>
+                <button [routerLink]="['/login']" class="btn btn-ins btn-lg">J'ai un compte</button>
+
+            </div>
+        </form>
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
