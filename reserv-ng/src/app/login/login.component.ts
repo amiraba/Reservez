@@ -13,6 +13,7 @@ import {MdDialog} from "@angular/material";
 export class LoginComponent implements OnInit {
   userCredentials;
   returnUrl: string;
+  loginProblem= false;
 
   constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, public appComponent: AppComponent, private dialog: MdDialog) { }
 
@@ -25,10 +26,15 @@ export class LoginComponent implements OnInit {
   login(){
 
     var b= this.loginService.login(this.userCredentials);
-    this.appComponent.connected= this.loginService.isLoggedIn();
-    console.log("this.appComponent.connected= this.loginService.isLoggedIn();"+ this.appComponent.connected);
-    this.router.navigate(['']);
-    //this.router.navigate([this.returnUrl]); //|| "?refresh=1"
+    if (!b){
+      this.loginProblem=true;
+    }else{
+      this.appComponent.connected= this.loginService.isLoggedIn();
+      console.log("this.appComponent.connected= this.loginService.isLoggedIn();"+ this.appComponent.connected);
+      this.router.navigate(['']);
+      //this.router.navigate([this.returnUrl]); //|| "?refresh=1"
+
+    }
 
   }
 

@@ -35,7 +35,7 @@ export class LoginService {
             b= false;
           }
         }, error => {
-          this.alertService.error("Echec de connexion");
+          this.alertService.error("Echec de connexion. Veuillez saisir un email valide et un mot de passe correct.");
         },
         ()=>{
           console.log("return now: "+ b);
