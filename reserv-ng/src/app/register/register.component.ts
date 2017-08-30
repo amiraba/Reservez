@@ -15,6 +15,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class RegisterComponent implements OnInit {
   client;
   rForm;
+  registrationProblem = false;
 
   constructor(private registerService: RegisterService, private router: Router, private loginService: LoginService,
               public appComponent: AppComponent) {
@@ -45,16 +46,21 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-    this.registerService.register(this.client);
-    setTimeout(() => {
-      let userCredentials= new UserCredentials();
-      userCredentials.email=this.client.email;
-      userCredentials.password=this.client.password;
-      var b= this.loginService.login(userCredentials);
-      this.appComponent.connected= this.loginService.isLoggedIn();
+    this.registerService.register(this.client).then( () => {
+        setTimeout(() => {
+          let userCredentials= new UserCredentials();
+          userCredentials.email=this.client.email;
+          userCredentials.password=this.client.password;
+          var b= this.loginService.login(userCredentials);
+          this.appComponent.connected= this.loginService.isLoggedIn();
 
-      this.router.navigate(['']);
-      }, 1000);
+          this.router.navigate(['']);
+        }, 1000);
+    }
+
+    ).catch( () => {
+        this.registrationProblem=true;
+    });
   }
 
   onSubmit() {

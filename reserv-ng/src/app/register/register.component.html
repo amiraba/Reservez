@@ -62,7 +62,9 @@
             <div class="text-center">
               <button type="submit" class="btn btn-ins btn-lg" [disabled]="!rForm.valid">Créer mon compte</button>
             </div>
-
+            <div *ngIf="registrationProblem" class="error-msg form-control-feedback alert alert-danger">
+              <div>Cet email existe déjà. Veuillez choisir un autre email.</div>
+            </div>
               <app-alert></app-alert>
 
           </form>
