@@ -10,6 +10,7 @@ import {UserCredentials} from "../_models/UserCredentials";
 import {RegisterService} from "../_services/register.service";
 import {AppComponent} from "../app.component";
 import {ClientService} from "../_services/client.service";
+import {AbstractControl, ValidatorFn, FormGroup, FormControl, Validators, FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-reserver2restaurant',
@@ -20,6 +21,7 @@ export class Reserver2restaurantComponent implements OnInit {
   x:string;
   reserv: Reservation;
   momentVariable;
+  res2Form: FormGroup;
 
   constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
               private reservationService: ReservationService,
@@ -32,7 +34,14 @@ export class Reserver2restaurantComponent implements OnInit {
 
   ngOnInit() {
     this.reserv.valideeParCarteBlueue=false;
-  }
+    this.res2Form = new FormGroup({
+      'date' : new FormControl ('', [
+        Validators.required,
+        dateCheckValidator
+      ]),
+    });
+
+    }
 
   postReserver(reserv){
     //console.log("momentValue -----------> "+ this.momentVariable);
@@ -44,6 +53,7 @@ export class Reserver2restaurantComponent implements OnInit {
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
     console.log(this.dataOffreResAndClientAndState);
     console.log(this.reserv.id_offreRes);
+
 
     if (this.loginService.isLoggedIn()==true) {
       this.clientService.getLoggedInClient()
@@ -98,13 +108,27 @@ export class Reserver2restaurantComponent implements OnInit {
             });
 
         }, 1000);
-
-
       }
-
     }
-
-
   }
+}
 
+export function dateCheckValidator(): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} => {
+    console.log("dateCheckValidator called");
+    let b: boolean= false;
+    if (this.momentVariable.getUTCFullYear() >= new Date().getFullYear()){
+      if (this.momentVariable.getMonth() >= new Date().getMonth()){
+        if (this.momentVariable.getDay() > new Date().getDay()){
+          console.log("checkDateValidty: " +b);
+          b= true;
+        }
+      }
+    }
+    console.log("checkDateValidty: " +b);
+    //const forbidden = nameRe.test(control.value);
+    //return forbidden ? {'forbiddenName': {value: control.value}} : null;
+
+    return b ? null : {'dateCheck': {value: this.momentVariable}};
+  };
 }

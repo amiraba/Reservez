@@ -20,13 +20,22 @@
       <h3><i class="fa fa-user"></i>Réservation</h3>
       <hr>
     </div>
+<form [formGroup]="res2Form" (ngSubmit)="onSubmit()">
+
 
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
-      <input placeholder="Choisissez la date et l'heure qui vous convient" class="picker-input" [value]="momentVariable | date" [(ngModel)]="momentVariable" dateTimePicker [mode]="'dropdown'" [viewFormat]= "'DD/MM/YYYY HH:mm'">
+      <input placeholder="Choisissez la date et l'heure qui vous convient" class="picker-input" [value]="momentVariable | date"
+             [(ngModel)]="momentVariable" dateTimePicker [mode]="'dropdown'" [viewFormat]= "'DD/MM/YYYY HH:mm'"
+             formControlName="date" required>
+
+      <div *ngIf="res2Form.controls['date'].errors && !res2Form.controls['date'].pristine" class="error-msg form-control-feedback alert alert-danger">
+        <div [hidden]="!res2Form.controls['date'].errors.required">Veuillez sélectionner une date valide.</div>
+        <div [hidden]="!res2Form.controls['date'].errors.Date">Veuillez sélectionner une date valide.2</div>
+      </div>
+
     </div>
-
-
+</form>
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
       <input type="text" id="form3" class="form-control"  placeholder="Notes" [(ngModel)]="reserv.notes">
@@ -39,7 +48,7 @@
       </fieldset>
       <hr>
 <br/>
-      <button class="btn btn-ins btn-lg" (click)="postReserver(reserv)">Réserver</button>
+      <button class="btn btn-ins btn-lg" (click)="postReserver(reserv)"  [disabled]="!res2Form.valid">Réserver</button>
 
     </div>
 
