@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import {Router} from "@angular/router";
 import {AlertService} from "./alert.service";
 import {UserCredentials} from "../_models/UserCredentials";
+import {AppComponent} from "../app.component";
 
 @Injectable()
 export class LoginService {
@@ -40,6 +41,11 @@ export class LoginService {
         ()=>{
           console.log("return now: "+ b);
           console.log(this.isLoggedIn());
+
+          this.router.navigate(['']);
+
+          //this.appComponent.connected= this.isLoggedIn();
+          this.router.navigate(['']);
           return b;
         });
 
