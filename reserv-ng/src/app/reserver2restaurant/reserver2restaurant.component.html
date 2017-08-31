@@ -27,11 +27,10 @@
       <i class="fa fa-envelope prefix"></i>
       <input placeholder="Choisissez la date et l'heure qui vous convient" class="picker-input" [value]="momentVariable | date"
              [(ngModel)]="momentVariable" dateTimePicker [mode]="'dropdown'" [viewFormat]= "'DD/MM/YYYY HH:mm'"
-             formControlName="date" required>
-
+             formControlName="date" required #myvar >
       <div *ngIf="res2Form.controls['date'].errors && !res2Form.controls['date'].pristine" class="error-msg form-control-feedback alert alert-danger">
-        <div [hidden]="!res2Form.controls['date'].errors.required">Veuillez sélectionner une date valide.</div>
-        <div [hidden]="!res2Form.controls['date'].errors.Date">Veuillez sélectionner une date valide.2</div>
+        <div [hidden]="!res2Form.controls['date'].errors.required">Veuillez préciser une date.</div>
+        <div [hidden]="!res2Form.controls['date'].errors.dateCheck">Veuillez sélectionner une date valide.</div>
       </div>
 
     </div>

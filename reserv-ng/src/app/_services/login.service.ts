@@ -39,8 +39,8 @@ export class LoginService {
           this.alertService.error("Echec de connexion. Veuillez saisir un email valide et un mot de passe correct.");
         },
         ()=>{
-          console.log("return now: "+ b);
-          console.log(this.isLoggedIn());
+          //console.log("return now: "+ b);
+          //console.log(this.isLoggedIn());
 
           this.router.navigate(['']);
 
@@ -56,11 +56,11 @@ export class LoginService {
   isLoggedIn(): boolean{
     var currenUserToken= localStorage.getItem('currentUserToken');
     if (currenUserToken){
-      console.log("in login.service/isLoggedIn: currentUserToken == " + true);
+      //console.log("in login.service/isLoggedIn: currentUserToken == " + true);
       return true;
     }
     else {
-      console.log("in login.service/isLoggedIn: currentUserToken == "+ false);
+      //console.log("in login.service/isLoggedIn: currentUserToken == "+ false);
       return false;
     }
   }
