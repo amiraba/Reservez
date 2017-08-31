@@ -19,6 +19,7 @@ export class ReserverComponent implements OnInit {
   creerNouveauCompte;
   @ViewChild('tata') el:ElementRef;
   res1Form: FormGroup;
+  res1bForm: FormGroup;
 
   constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public offreRes: OffreRes) {
     this.client= new Client();
@@ -28,10 +29,15 @@ export class ReserverComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    this.creerNouveauCompte=this.el.nativeElement.checked;
+    console.log(this.res1bForm.valid);
+    console.log("this.creerNouveauCompte: "+this.creerNouveauCompte);
   }
 
   ngOnChanges(){
     console.log("+change");
+    console.log("this.creerNouveauCompte: "+this.creerNouveauCompte);
+
   }
   createForm(){
     this.res1Form = new FormGroup({
@@ -49,34 +55,39 @@ export class ReserverComponent implements OnInit {
       tel: new FormControl('', [
         Validators.minLength(8),
         Validators.pattern("[0-9]+"),
-      ]),
-      'checking' : new FormControl("", [])
+      ])
+    });
+
+    this.res1bForm = new FormGroup({
+      'password': new FormControl("", Validators.compose([
+        Validators.required,
+        Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"),
+      ]))
     });
   }
   popout2(){
-
     this.dialog.closeAll();
     this.creerNouveauCompte=this.el.nativeElement.checked;
     this.dataOffreResAndClientAndState.creerNouveauCompte= this.creerNouveauCompte;
 
-    if (this.creerNouveauCompte==true){
-      this.res1Form.addControl(
-        'password', new FormControl("", Validators.compose([
-        Validators.required,
-        Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"),
-      ]))
-      )
+      this.dataOffreResAndClientAndState.client=this.client;
+
+      let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
+        data: this.dataOffreResAndClientAndState,
+        height: '90%',
+        width: '60%',
+      });
+
+  }
+
+  checkFormsInvalidity(): boolean{
+    if (this.el.nativeElement.checked){
+      console.log("cas 2 forms");
+      return (!this.res1Form.valid || !this.res1bForm.valid);
+    }else{
+      console.log("cas 1 form");
+      return (!this.res1Form.valid);
     }
-
-    this.dataOffreResAndClientAndState.client=this.client;
-
-    let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
-      data: this.dataOffreResAndClientAndState,
-      height: '90%',
-      width: '60%',
-    });
-
-
   }
 }
 
