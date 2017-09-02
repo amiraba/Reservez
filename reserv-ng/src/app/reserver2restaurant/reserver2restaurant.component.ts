@@ -49,6 +49,7 @@ export class Reserver2restaurantComponent implements OnInit {
     }
 
   postReserver(reserv){
+    this.reserv.titre=this.dataOffreResAndClientAndState.offreRes.titre;
     this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
     this.reserv.nb_places=1;

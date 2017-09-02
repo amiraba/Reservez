@@ -1,5 +1,6 @@
 export class Reservation {
   id_reservation: number;
+  titre: string;
   service: string;
   dateEtHeure: Date;
   notes: string;

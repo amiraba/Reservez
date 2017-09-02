@@ -7,6 +7,9 @@
     "validateUpsert": true
   },
   "properties": {
+    "titre": {
+      "type": "string"
+    },
     "service": {
       "type": "string",
       "required": true
