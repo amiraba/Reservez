@@ -1,6 +1,29 @@
-<br/><br/><br/><br/><br/><br/><br/><br/><p>
-  offre-res-details works!
-</p>
 
+<span class="counter amira-margin">{{offreRes.prestataire_categorie}}</span>
+<h1 class=" section-heading wow fadeIn ">
+  <i class="fa center "></i>
+  <span class="hidden-md-down amira-padding">{{offreRes.titre}}</span>
+</h1><br/>
 
-<button class="btn btn-primary" (click)="retour()">Retour</button>
+<div class="price mb-1">
+  <div class="version header">
+    <h5>{{offreRes.service}}</h5>
+  </div>
+</div>
+<!--/.Price-->
+
+<!--Features-->
+<div class="card-block streakd">
+  <ul>
+    <li>
+      <p>{{offreRes.description}}</p>
+    </li>
+    <li>
+      <h5><i>Ce service est disponible de {{offreRes.heureDebut}} à {{offreRes.heureFin}}</i></h5>
+    </li>
+  </ul>
+<br/>
+  <div class="text-center">
+    <a class="btn btn-primary btn-ins btn-lg" href="http://www.lesultan.com/">Visiter le site prestataire</a>
+    <button class="btn btn-primary btn-ins btn-lg" (click)="retour()">Retour</button>
+  </div>

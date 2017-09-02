@@ -82,7 +82,7 @@ export class OffreResComponent implements OnInit {
     this.dialog.closeAll();
     let dialogRef = this.dialog.open(OffreResDetailsComponent, {
       data: offreRes,
-      height: '90%',
+      height: '81%',
       width: '60%',
     });
   }
