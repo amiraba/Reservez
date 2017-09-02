@@ -53,8 +53,6 @@ export class RegisterComponent implements OnInit {
           userCredentials.email=this.client.email;
           userCredentials.password=this.client.password;
           var b= this.loginService.login(userCredentials);
-          this.navbarComponent.connected= this.loginService.isLoggedIn();
-
           this.router.navigate(['']);
         }, 1000);
     }

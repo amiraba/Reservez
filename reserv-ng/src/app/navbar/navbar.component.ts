@@ -8,8 +8,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  connected: boolean;
-
   cnx_seConnecter="Se connecter";
   cnx_creerUnCompte= "Créer un compte";
   cnx_deconnexion="Déconnexion";
@@ -18,11 +16,9 @@ export class NavbarComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
-    this.connected= this.loginService.isLoggedIn();
   }
   logout(){
     this.loginService.logout();
-    this.connected= this.loginService.isLoggedIn();
     this.router.navigate(['']);
   }
 }

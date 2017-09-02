@@ -13,30 +13,16 @@ import {NavbarComponent} from "../navbar/navbar.component";
 })
 export class LoginComponent implements OnInit {
   userCredentials;
-  returnUrl: string;
-  loginProblem= false;
 
-  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, public navbarComponent: NavbarComponent, private dialog: MdDialog) { }
-
+  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, private dialog: MdDialog) { }
 
   ngOnInit() {
     this.dialog.closeAll();
     this.userCredentials=new UserCredentials();
-    //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   login(){
-
-    var b= this.loginService.login(this.userCredentials);
-    if (!b){
-      this.loginProblem=true;
-    }else{
-      this.navbarComponent.connected= this.loginService.isLoggedIn();
-      this.router.navigate(['']);
-      //this.router.navigate([this.returnUrl]); //|| "?refresh=1"
-
-    }
-
+    this.loginService.login(this.userCredentials);
   }
 
 

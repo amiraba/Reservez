@@ -44,20 +44,14 @@ export class Reserver2restaurantComponent implements OnInit {
 
   ngOnInit() {
     this.reserv.valideeParCarteBlueue=false;
-
-    //console.log(this.res2Form.controls['date'].errors.dateCheck)
     }
 
   postReserver(reserv){
-    //console.log("momentValue -----------> "+ this.momentVariable);
     this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
     this.reserv.nb_places=1;
     this.reserv.dateEtHeure=this.momentVariable;
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
-    //console.log(this.dataOffreResAndClientAndState);
-    //console.log(this.reserv.id_offreRes);
-
 
     if (this.loginService.isLoggedIn()==true) {
       this.clientService.getLoggedInClient()
@@ -70,8 +64,6 @@ export class Reserver2restaurantComponent implements OnInit {
         }, err => {
           console.log(err);
         });
-
-
     }else{
       if ( this.dataOffreResAndClientAndState.creerNouveauCompte == false){
 
@@ -80,31 +72,18 @@ export class Reserver2restaurantComponent implements OnInit {
         this.dialog.closeAll();
 
       }else{
-        //register
-        //console.log("iiiiiiiiin - reserver2restaurant.postReserv else else - debut");
         this.registerService.register(this.dataOffreResAndClientAndState.client);
-        //console.log("iiiiiiiiin - reserver2restaurant.postReserv after register");
-        //login
         let userCredentials= new UserCredentials();
-        //console.log("usrCred: "+this.dataOffreResAndClientAndState.client.email+" "+ this.dataOffreResAndClientAndState.client.password);
         userCredentials.email=this.dataOffreResAndClientAndState.client.email;
         userCredentials.password=this.dataOffreResAndClientAndState.client.password;
         var b= this.loginService.login(userCredentials);
-        //console.log("iiiiiiiiin - reserver2restaurant.postReserv after login");
 
         setTimeout(() => {
-          this.navbarComponent.connected= this.loginService.isLoggedIn();
-          //console.log("iiiiiiiiin - reserver2restaurant.postReserv after isLoggedIn");
-          //console.log(this.loginService.isLoggedIn());
-
           this.clientService.getLoggedInClient()
             .subscribe (res => {
               //console.log("res.id: "+res.id);
               this.reserv.id_client=res.id+'';
-              //console.log(this.dataOffreResAndClientAndState);
               this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
-
-              //console.log("iiiiiiiiin - reserver2restaurant.postReserv - fin");
               this.reservationService.postReserv(reserv);
               this.dialog.closeAll();
             }, err => {
@@ -119,14 +98,9 @@ export class Reserver2restaurantComponent implements OnInit {
 
 export function dateCheckValidator(control: FormControl) {
 
-  //return (control: FormControl): {[key: string]: any} => {
-    //console.log("dateCheckValidator called");
     let b: boolean= false;
     let d= new Date (control.value);
     let now= new Date();
-    //console.log( control.value);
-    //console.log( d.getUTCFullYear()+" "+" "+d.getMonth()+" " + d.getDate());
-    //console.log( now.getUTCFullYear()+" "+" "+now.getMonth()+" " + now.getDate());
 
     if (d.getUTCFullYear() > now.getFullYear()){
       return null;
@@ -140,9 +114,4 @@ export function dateCheckValidator(control: FormControl) {
         }
       }
     return {'dateCheck': {value: d}};
-    //const forbidden = nameRe.test(control.value);
-    //return forbidden ? {'forbiddenName': {value: control.value}} : null;
-
-    //return b ? null : {'dateCheck': {value: this.momentVariable}};
- // };
 }

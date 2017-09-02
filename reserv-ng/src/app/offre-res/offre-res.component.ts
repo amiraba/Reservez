@@ -31,16 +31,13 @@ export class OffreResComponent implements OnInit {
     .subscribe (res => {
       this.offreReservs=res;
       if (this.loginService.isLoggedIn()==true){
-
         this.clientService.getLoggedInClient()
           .subscribe (res => {
             this.client=res;
           }, err => {
             console.log(err);
           });
-
       }
-      //console.log(this.offreReservs);
       }, err => {
         console.log(err);
       });
@@ -57,7 +54,6 @@ export class OffreResComponent implements OnInit {
       });
   }
   popout(offreRes){
-    //console.log(offreRes.titre);
     if (this.loginService.isLoggedIn()==true){
       let dataOffreResAndClientAndState: DataOffreResAndClientAndState= new DataOffreResAndClientAndState();
       dataOffreResAndClientAndState.offreRes=offreRes;
@@ -78,7 +74,6 @@ export class OffreResComponent implements OnInit {
       });
 
     }
-    //dialogRef.afterClosed().subscribe(result => {});
   }
 
 }
