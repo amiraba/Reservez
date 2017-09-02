@@ -28,6 +28,8 @@ import {ClientService} from "./_services/client.service";
 import { MomentModule } from 'angular2-moment';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -53,7 +55,9 @@ const appRoutes: Routes = [
     LoginComponent,
     ClientMesReservComponent,
     AlertComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule.forRoot(
