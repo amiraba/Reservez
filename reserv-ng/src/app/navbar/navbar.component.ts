@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   cnx_deconnexion="Déconnexion";
 
 
-  constructor(private loginService: LoginService, private router: Router , private applicationRef : ApplicationRef ) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.connected= this.loginService.isLoggedIn();

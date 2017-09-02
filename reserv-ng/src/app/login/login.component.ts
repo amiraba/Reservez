@@ -26,14 +26,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log("in login component");
-    var b= this.loginService.login(this.userCredentials)
+
+    var b= this.loginService.login(this.userCredentials);
     if (!b){
       this.loginProblem=true;
     }else{
-      console.log("in login component / b==true");
       this.navbarComponent.connected= this.loginService.isLoggedIn();
-      console.log("this.appComponent.connected= this.loginService.isLoggedIn();"+ this.navbarComponent.connected);
       this.router.navigate(['']);
       //this.router.navigate([this.returnUrl]); //|| "?refresh=1"
 

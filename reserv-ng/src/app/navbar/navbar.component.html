@@ -24,7 +24,7 @@
       </ul>
       <!--Navbar icons-->
       <ul class="nav navbar-nav nav-flex-icons">
-        <div *ngIf="connected==false; else elseBlock">
+        <div *ngIf="loginService.isLoggedIn()==false; else elseBlock">
           <li class="nav-item btn-group">
             <a [routerLink]="['/login']" class="nav-link">{{cnx_seConnecter}}</a>
           </li>
@@ -34,18 +34,13 @@
 
 
         </div>
-<!--
+
         <ng-template #elseBlock>
           <li class="nav-item btn-group">
             <a (click)="logout()" class="nav-link">{{cnx_deconnexion}}</a>
           </li>
         </ng-template>
--->
-        <div *ngIf="connected==true">
-          <li class="nav-item btn-group">
-            <a (click)="logout()" class="nav-link">{{cnx_deconnexion}}</a>
-          </li>
-        </div>
+
 
 
 
