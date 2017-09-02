@@ -10,6 +10,7 @@ import {LoginService} from "../_services/login.service";
 import {ClientService} from "../_services/client.service";
 import {Client} from "../_models/Client";
 import {DataOffreResAndClientAndState} from "../_models/DataOffreResAndClientAndState";
+import {OffreResDetailsComponent} from "../offre-res-details/offre-res-details.component";
 
 
 @Component({
@@ -74,6 +75,16 @@ export class OffreResComponent implements OnInit {
       });
 
     }
+  }
+
+  popout_details(offreRes){
+    console.log("details!!!");
+    this.dialog.closeAll();
+    let dialogRef = this.dialog.open(OffreResDetailsComponent, {
+      data: offreRes,
+      height: '90%',
+      width: '60%',
+    });
   }
 
 }

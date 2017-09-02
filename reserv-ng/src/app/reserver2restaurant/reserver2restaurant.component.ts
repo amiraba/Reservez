@@ -26,7 +26,8 @@ export class Reserver2restaurantComponent implements OnInit {
   res2Form: FormGroup;
   @ViewChild('myvar') el: ElementRef;
 
-  constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
+  constructor(private dialog: MdDialog,
+              @Inject(MD_DIALOG_DATA) public dataOffreResAndClientAndState: DataOffreResAndClientAndState,
               private reservationService: ReservationService,
               private loginService: LoginService,
               private registerService: RegisterService,

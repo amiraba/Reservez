@@ -31,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OffreResDetailsComponent } from './offre-res-details/offre-res-details.component';
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -59,7 +60,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     FooterComponent,
     AboutComponent,
-    NavbarComponent
+    NavbarComponent,
+    OffreResDetailsComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -94,7 +96,8 @@ const appRoutes: Routes = [
   ],
   entryComponents: [
     ReserverComponent,
-    Reserver2restaurantComponent
+    Reserver2restaurantComponent,
+    OffreResDetailsComponent
   ],
   bootstrap: [AppComponent]
 })

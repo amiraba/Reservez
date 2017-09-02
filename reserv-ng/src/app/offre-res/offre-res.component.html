@@ -32,7 +32,7 @@
                                 <!--Full width lightbox-->
                                 <div class="mdb-lightbox" style="padding: 30px" >
                                     <figure class="col-md-12">
-                                          <img src={{offreRes.photoOffreRes}} class="img-fluid">
+                                          <img src={{offreRes.photoOffreRes}} class="img-fluid amira-image-hover" (click)="popout_details(offreRes)">
 
                                         <md-grid-list cols="3" rowHeight="50px">
                                           <md-grid-tile [colspan]="2">
