@@ -1,3 +1,43 @@
-<p><br><br><br><br><br>
-  client-mes-reserv works!
-</p>
+<br><br><br><br><br>
+
+
+  <!--Section: Pricing v.1-->
+  <section id="visit" class="section">
+
+    <md-grid-list cols="3">
+      <md-grid-tile *ngFor="let res of reservs">
+
+        <div class="row wow fadeIn" data-wow-delay="0.4s">
+
+            <!--Pricing card-->
+            <div class="card pricing-card">
+              <!--Price-->
+              <div class="price mb-1">
+                <div class="version header elegant-color">
+                  <h5>{{res.service}}</h5>
+                </div>
+              </div>
+              <!--/.Price-->
+
+              <!--Features-->
+              <div class="card-block streakd">
+                <ul>
+                  <li>
+                    <p>{{res.dateEtHeure}}</p>
+                  </li>
+                </ul>
+                <button class="btn btn-primary" (click)="reservationService.annuler( res.id )">Annuler</button>
+              </div>
+            <!--/.Features-->
+
+            </div>
+          <!--/.Pricing card-->
+
+          </div>
+
+      </md-grid-tile>
+
+    </md-grid-list>
+
+  </section>
+  <!--/Section: Pricing v.1-->

@@ -8,6 +8,7 @@ import { OffreRes } from '../_models/offreRes';
 import 'rxjs/add/operator/toPromise';
 
 import 'rxjs/add/operator/map';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class ReservationService {
@@ -16,7 +17,8 @@ export class ReservationService {
     'Content-Type': 'application/json',
   });
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,
+              private router: Router) { }
 
   postReserv(reserv: Reservation): Promise<Reservation> {
     const url = `http://localhost:3000/api/reservations`;
@@ -37,5 +39,16 @@ export class ReservationService {
     return this.http.get(url, {headers: this.headers})
       .map( res => <Reservation[]> res.json() )
       .catch( err => {return Observable.throw(err)});
+  }
+  annuler(id){
+    let url= 'http://localhost:3000/api/reservations/'+id;
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then( () => {
+        this.router.navigate(['clientMesReserv']);
+      })
+      .catch(this.handleError);
+
   }
 }
