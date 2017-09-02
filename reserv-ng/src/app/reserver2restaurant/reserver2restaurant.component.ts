@@ -11,6 +11,7 @@ import {RegisterService} from "../_services/register.service";
 import {AppComponent} from "../app.component";
 import {ClientService} from "../_services/client.service";
 import {FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {NavbarComponent} from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-reserver2restaurant',
@@ -28,7 +29,7 @@ export class Reserver2restaurantComponent implements OnInit {
               private reservationService: ReservationService,
               private loginService: LoginService,
               private registerService: RegisterService,
-              private appComponent: AppComponent,
+              private navbarComponent:NavbarComponent,
               private clientService: ClientService) {
     this.reserv= new Reservation();
 
@@ -51,7 +52,6 @@ export class Reserver2restaurantComponent implements OnInit {
     //console.log("momentValue -----------> "+ this.momentVariable);
     this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
-    this.reserv.montant=100;
     this.reserv.nb_places=1;
     this.reserv.dateEtHeure=this.momentVariable;
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
@@ -93,7 +93,7 @@ export class Reserver2restaurantComponent implements OnInit {
         //console.log("iiiiiiiiin - reserver2restaurant.postReserv after login");
 
         setTimeout(() => {
-          this.appComponent.connected= this.loginService.isLoggedIn();
+          this.navbarComponent.connected= this.loginService.isLoggedIn();
           //console.log("iiiiiiiiin - reserver2restaurant.postReserv after isLoggedIn");
           //console.log(this.loginService.isLoggedIn());
 
@@ -123,7 +123,7 @@ export function dateCheckValidator(control: FormControl) {
     //console.log("dateCheckValidator called");
     let b: boolean= false;
     let d= new Date (control.value);
-    let now= new Date("2017-08-20");
+    let now= new Date();
     //console.log( control.value);
     //console.log( d.getUTCFullYear()+" "+" "+d.getMonth()+" " + d.getDate());
     //console.log( now.getUTCFullYear()+" "+" "+now.getMonth()+" " + now.getDate());

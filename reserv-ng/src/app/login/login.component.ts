@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log("in login component");
-    var b= this.loginService.login(this.userCredentials);
+    var b= this.loginService.login(this.userCredentials)
     if (!b){
       this.loginProblem=true;
     }else{

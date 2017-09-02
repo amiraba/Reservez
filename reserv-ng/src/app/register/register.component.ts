@@ -6,6 +6,7 @@ import {AppComponent} from "../app.component";
 import {LoginService} from "../_services/login.service";
 import {UserCredentials} from "../_models/UserCredentials";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {NavbarComponent} from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
   registrationProblem = false;
 
   constructor(private registerService: RegisterService, private router: Router, private loginService: LoginService,
-              public appComponent: AppComponent) {
+              public navbarComponent: NavbarComponent) {
     this.client=new Client();
   }
 
@@ -52,7 +53,7 @@ export class RegisterComponent implements OnInit {
           userCredentials.email=this.client.email;
           userCredentials.password=this.client.password;
           var b= this.loginService.login(userCredentials);
-          this.appComponent.connected= this.loginService.isLoggedIn();
+          this.navbarComponent.connected= this.loginService.isLoggedIn();
 
           this.router.navigate(['']);
         }, 1000);
