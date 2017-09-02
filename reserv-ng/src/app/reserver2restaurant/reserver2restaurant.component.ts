@@ -58,7 +58,6 @@ export class Reserver2restaurantComponent implements OnInit {
     if (this.loginService.isLoggedIn()==true) {
       this.clientService.getLoggedInClient()
         .subscribe (res => {
-          console.log("a333333! "+ res.id);
           this.reserv.id_client=res.id+'';
           this.reservationService.postReserv(reserv);
           this.dialog.closeAll();
@@ -66,7 +65,9 @@ export class Reserver2restaurantComponent implements OnInit {
         }, err => {
           console.log(err);
         });
+
     }else{
+
       if ( this.dataOffreResAndClientAndState.creerNouveauCompte == false){
 
         this.reserv.email_client=this.dataOffreResAndClientAndState.client.email;
@@ -85,7 +86,6 @@ export class Reserver2restaurantComponent implements OnInit {
             setTimeout(() => {
               this.clientService.getLoggedInClient()
                 .subscribe (res => {
-                  //console.log("res.id: "+res.id);
                   this.reserv.id_client=res.id+'';
                   this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
                   this.reservationService.postReserv(reserv);
@@ -93,7 +93,6 @@ export class Reserver2restaurantComponent implements OnInit {
                 }, err => {
                   console.log(err);
                 });
-
             }, 1000);
           }
         ).catch( err => {
