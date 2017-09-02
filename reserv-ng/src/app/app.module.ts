@@ -30,6 +30,7 @@ import { DateTimePickerModule } from 'ng-pick-datetime';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     AlertComponent,
     RegisterComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    NavbarComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -87,7 +89,8 @@ const appRoutes: Routes = [
     ClientService,
     AUTH_PROVIDERS,
     LoggedInGuard,
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   entryComponents: [
     ReserverComponent,

@@ -4,6 +4,7 @@ import {UserCredentials} from "../_models/UserCredentials";
 import { Router, ActivatedRoute } from '@angular/router';
 import {AppComponent} from "../app.component";
 import {MdDialog} from "@angular/material";
+import {NavbarComponent} from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   loginProblem= false;
 
-  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, public appComponent: AppComponent, private dialog: MdDialog) { }
+  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, public navbarComponent: NavbarComponent, private dialog: MdDialog) { }
+
 
   ngOnInit() {
     this.dialog.closeAll();
@@ -24,13 +26,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-
+    console.log("in login component");
     var b= this.loginService.login(this.userCredentials);
     if (!b){
       this.loginProblem=true;
     }else{
-      this.appComponent.connected= this.loginService.isLoggedIn();
-      console.log("this.appComponent.connected= this.loginService.isLoggedIn();"+ this.appComponent.connected);
+      console.log("in login component / b==true");
+      this.navbarComponent.connected= this.loginService.isLoggedIn();
+      console.log("this.appComponent.connected= this.loginService.isLoggedIn();"+ this.navbarComponent.connected);
       this.router.navigate(['']);
       //this.router.navigate([this.returnUrl]); //|| "?refresh=1"
 

@@ -13,23 +13,15 @@ import {LoginService} from './_services/login.service';
 })
 export class AppComponent implements OnInit{
   title = 'app';
-  connected: boolean;
 
-  cnx_seConnecter="Se connecter";
-  cnx_creerUnCompte= "Créer un compte";
-  cnx_deconnexion="Déconnexion";
 
-  constructor(private loginService: LoginService, private router: Router , private applicationRef : ApplicationRef ) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.connected= this.loginService.isLoggedIn();
+
   }
 
 
-  logout(){
-    this.loginService.logout();
-    this.connected= this.loginService.isLoggedIn();
-    this.router.navigate(['']);
-  }
+
 }
