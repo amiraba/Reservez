@@ -30,13 +30,16 @@
     },
     "id_offreRes": {
       "type": "string"
-    },
-    "id_client": {
-      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "id_client": {
+      "type": "hasOne",
+      "model": "client",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

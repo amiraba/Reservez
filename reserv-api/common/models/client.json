@@ -26,7 +26,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "reservs": {
+      "type": "hasMany",
+      "model": "reservation",
+      "foreignKey": ""
+    }
+  },
   "acls": [
     {
       "accessType": "*",

@@ -32,4 +32,10 @@ export class ReservationService {
     return Promise.reject(error.message || error);
   }
 
+  getReservsByCliendId(id){
+    const url = 'http://localhost:3000/api/clients/'+id+'/reservs';
+    return this.http.get(url, {headers: this.headers})
+      .map( res => <Reservation[]> res.json() )
+      .catch( err => {return Observable.throw(err)});
+  }
 }

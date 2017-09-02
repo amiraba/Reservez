@@ -12,7 +12,7 @@ export class ClientService {
 
   constructor(private http: Http) { }
 
-  private getLoggedInClientId(): string{
+  public getLoggedInClientId(): string{
     var currenUserToken= localStorage.getItem('currentUserToken');
     let token= JSON.parse(currenUserToken);
     return token.userId;

@@ -58,7 +58,7 @@ export class Reserver2restaurantComponent implements OnInit {
     if (this.loginService.isLoggedIn()==true) {
       this.clientService.getLoggedInClient()
         .subscribe (res => {
-          this.reserv.id_client=res.id+'';
+          this.reserv.clientId=res.id+'';
           this.reservationService.postReserv(reserv);
           this.dialog.closeAll();
 
@@ -86,7 +86,7 @@ export class Reserver2restaurantComponent implements OnInit {
             setTimeout(() => {
               this.clientService.getLoggedInClient()
                 .subscribe (res => {
-                  this.reserv.id_client=res.id+'';
+                  this.reserv.clientId=res.id+'';
                   this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
                   this.reservationService.postReserv(reserv);
                   this.dialog.closeAll();

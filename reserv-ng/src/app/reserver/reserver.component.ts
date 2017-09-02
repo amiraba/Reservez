@@ -34,11 +34,6 @@ export class ReserverComponent implements OnInit {
     console.log("this.creerNouveauCompte: "+this.creerNouveauCompte);
   }
 
-  ngOnChanges(){
-    console.log("+change");
-    console.log("this.creerNouveauCompte: "+this.creerNouveauCompte);
-
-  }
   createForm(){
     this.res1Form = new FormGroup({
       // tslint:disable-next-line

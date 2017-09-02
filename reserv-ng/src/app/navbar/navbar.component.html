@@ -21,6 +21,11 @@
           <a class="nav-link" href="#contact" data-offset="110">Contact</a>
         </li>
 
+        <div *ngIf="loginService.isLoggedIn()==true">
+          <li class="nav-item">
+            <a [routerLink]="['/clientMesReserv']" class="nav-link">Mes réservations</a>
+          </li>
+        </div>
       </ul>
       <!--Navbar icons-->
       <ul class="nav navbar-nav nav-flex-icons">
