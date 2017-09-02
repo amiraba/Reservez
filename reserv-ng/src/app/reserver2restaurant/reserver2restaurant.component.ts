@@ -12,6 +12,7 @@ import {AppComponent} from "../app.component";
 import {ClientService} from "../_services/client.service";
 import {FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
 import {NavbarComponent} from "../navbar/navbar.component";
+import {AlertService} from "../_services/alert.service";
 
 @Component({
   selector: 'app-reserver2restaurant',
@@ -30,7 +31,8 @@ export class Reserver2restaurantComponent implements OnInit {
               private loginService: LoginService,
               private registerService: RegisterService,
               private navbarComponent:NavbarComponent,
-              private clientService: ClientService) {
+              private clientService: ClientService,
+              private alertService: AlertService) {
     this.reserv= new Reservation();
 
     this.res2Form = new FormGroup({
@@ -72,25 +74,32 @@ export class Reserver2restaurantComponent implements OnInit {
         this.dialog.closeAll();
 
       }else{
-        this.registerService.register(this.dataOffreResAndClientAndState.client);
-        let userCredentials= new UserCredentials();
-        userCredentials.email=this.dataOffreResAndClientAndState.client.email;
-        userCredentials.password=this.dataOffreResAndClientAndState.client.password;
-        var b= this.loginService.login(userCredentials);
 
-        setTimeout(() => {
-          this.clientService.getLoggedInClient()
-            .subscribe (res => {
-              //console.log("res.id: "+res.id);
-              this.reserv.id_client=res.id+'';
-              this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
-              this.reservationService.postReserv(reserv);
-              this.dialog.closeAll();
-            }, err => {
-              console.log(err);
-            });
+        this.registerService.register(this.dataOffreResAndClientAndState.client).then(
+          () => {
+            let userCredentials= new UserCredentials();
+            userCredentials.email=this.dataOffreResAndClientAndState.client.email;
+            userCredentials.password=this.dataOffreResAndClientAndState.client.password;
+            this.loginService.login(userCredentials);
 
-        }, 1000);
+            setTimeout(() => {
+              this.clientService.getLoggedInClient()
+                .subscribe (res => {
+                  //console.log("res.id: "+res.id);
+                  this.reserv.id_client=res.id+'';
+                  this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
+                  this.reservationService.postReserv(reserv);
+                  this.dialog.closeAll();
+                }, err => {
+                  console.log(err);
+                });
+
+            }, 1000);
+          }
+        ).catch( err => {
+          this.alertService.error("L'email de la réservation existe déjà.")
+        });
+
       }
     }
   }
