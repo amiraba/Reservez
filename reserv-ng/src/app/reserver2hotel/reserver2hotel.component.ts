@@ -1,27 +1,25 @@
-import { Component, OnInit,  Inject, ElementRef, ViewChild} from '@angular/core';
-import {MD_DIALOG_DATA, MdDatepicker} from '@angular/material';
-import { Reservation } from '../_models/Reservation';
-import {MdDialog} from '@angular/material';
-
-import { ReservationService } from '../_services/reservation.service';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MD_DIALOG_DATA, MdDialog} from "@angular/material";
 import {DataOffreResAndClientAndState} from "../_models/DataOffreResAndClientAndState";
+import {ReservationService} from "../_services/reservation.service";
 import {LoginService} from "../_services/login.service";
-import {UserCredentials} from "../_models/UserCredentials";
 import {RegisterService} from "../_services/register.service";
-import {AppComponent} from "../app.component";
-import {ClientService} from "../_services/client.service";
-import {FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
 import {NavbarComponent} from "../navbar/navbar.component";
+import {ClientService} from "../_services/client.service";
 import {AlertService} from "../_services/alert.service";
+import {Reservation} from "../_models/Reservation";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UserCredentials} from "../_models/UserCredentials";
 
 @Component({
-  selector: 'app-reserver2restaurant',
-  templateUrl: './reserver2restaurant.component.html',
-  styleUrls: ['./reserver2restaurant.component.css']
+  selector: 'app-reserver2hotel',
+  templateUrl: './reserver2hotel.component.html',
+  styleUrls: ['./reserver2hotel.component.css']
 })
-export class Reserver2restaurantComponent implements OnInit {
+export class Reserver2hotelComponent implements OnInit {
   reserv: Reservation;
   momentVariable;
+  momentVariable2;
   res2Form: FormGroup;
 
   constructor(private dialog: MdDialog,
@@ -32,6 +30,7 @@ export class Reserver2restaurantComponent implements OnInit {
               private navbarComponent:NavbarComponent,
               private clientService: ClientService,
               private alertService: AlertService) {
+
     this.reserv= new Reservation();
 
     this.res2Form = new FormGroup({
@@ -39,13 +38,18 @@ export class Reserver2restaurantComponent implements OnInit {
         Validators.required,
         dateCheckValidator
       ])),
+      'date2' : new FormControl ('', Validators.compose( [
+        Validators.required,
+        dateCheckValidator,
+        //dateCheckValidatorDate2('','date')
+      ])),
     });
 
   }
 
   ngOnInit() {
     this.reserv.valideeParCarteBlueue=false;
-    }
+  }
 
   postReserver(reserv){
     this.reserv.titre=this.dataOffreResAndClientAndState.offreRes.titre;
@@ -53,6 +57,8 @@ export class Reserver2restaurantComponent implements OnInit {
     this.reserv.statut="ok";
     this.reserv.nb_places=1;
     this.reserv.dateEtHeure=this.momentVariable;
+    //TODO
+
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
 
     if (this.loginService.isLoggedIn()==true) {
@@ -103,25 +109,44 @@ export class Reserver2restaurantComponent implements OnInit {
     }
   }
 }
-
 export function dateCheckValidator(control: FormControl) {
 
-    let b: boolean= false;
-    let d= new Date (control.value);
-    let now= new Date();
+  let b: boolean= false;
+  let d= new Date (control.value);
+  let now= new Date();
 
-    if (d.getUTCFullYear() > now.getFullYear()){
+  if (d.getUTCFullYear() > now.getFullYear()){
+    return null;
+  }else {
+    if (d.getMonth() > now.getMonth() && d.getUTCFullYear() == now.getFullYear()){
       return null;
-    }else {
-        if (d.getMonth() > now.getMonth() && d.getUTCFullYear() == now.getFullYear()){
-          return null;
-        }else{
-          if (d.getDate() > now.getDate() && d.getMonth()== now.getMonth()){
-            return null;
-          }
-        }
+    }else{
+      if (d.getDate() > now.getDate() && d.getMonth()== now.getMonth()){
+        return null;
       }
-    return {'dateCheck': {value: d}};
+    }
+  }
+  return {'dateCheck': {value: d}};
 }
+/*
+export function dateCheckValidatorDate2(control: FormControl, date: string) {
 
+  let b: boolean= false;
+  let d= new Date (control.value);
+  let now= new Date();
+
+  if (d.getUTCFullYear() > now.getFullYear()){
+    return null;
+  }else {
+    if (d.getMonth() > now.getMonth() && d.getUTCFullYear() == now.getFullYear()){
+      return null;
+    }else{
+      if (d.getDate() > now.getDate() && d.getMonth()== now.getMonth()){
+        return null;
+      }
+    }
+  }
+  return {'dateCheck2': {value: d}};
+}
+*/
 

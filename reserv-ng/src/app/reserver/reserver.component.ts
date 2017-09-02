@@ -6,6 +6,7 @@ import { Client } from '../_models/Client';
 import { OffreRes } from '../_models/OffreRes';
 import { DataOffreResAndClientAndState } from '../_models/DataOffreResAndClientAndState';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Reserver2hotelComponent} from "../reserver2hotel/reserver2hotel.component";
 
 @Component({
   selector: 'app-reserver',
@@ -65,13 +66,22 @@ export class ReserverComponent implements OnInit {
     this.creerNouveauCompte=this.el.nativeElement.checked;
     this.dataOffreResAndClientAndState.creerNouveauCompte= this.creerNouveauCompte;
 
-      this.dataOffreResAndClientAndState.client=this.client;
+    this.dataOffreResAndClientAndState.client=this.client;
 
+    if (this.dataOffreResAndClientAndState.offreRes.prestataire_categorie=="Restaurant"){
       let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
         data: this.dataOffreResAndClientAndState,
         height: '90%',
-        width: '60%',
+        width: '60%'
       });
+    }else if (this.dataOffreResAndClientAndState.offreRes.prestataire_categorie=="Hotel"){
+      console.log("Im' here")
+      let dialogRef = this.dialog.open(Reserver2hotelComponent, {
+        data: this.dataOffreResAndClientAndState,
+        height: '90%',
+        width: '60%'
+      });
+    }
 
   }
 

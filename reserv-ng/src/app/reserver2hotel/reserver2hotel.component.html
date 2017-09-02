@@ -1,0 +1,91 @@
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap Template</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<!--Form-->
+<div class="card wow fadeInRight">
+  <div class="card-block">
+    <!--Header-->
+    <div class="text-center">
+      <h3><i class="fa fa-user"></i>Réservation</h3>
+      <hr>
+    </div>
+    <form [formGroup]="res2Form" (ngSubmit)="onSubmit()">
+
+
+      <div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input placeholder="Check-in" class="picker-input" [value]="momentVariable | date"
+               [(ngModel)]="momentVariable" dateTimePicker [mode]="'dropdown'" [viewFormat]= "'DD/MM/YYYY HH:mm'"
+               formControlName="date" required #myvar >
+        <div *ngIf="res2Form.controls['date'].errors && !res2Form.controls['date'].pristine" class="error-msg form-control-feedback alert alert-danger">
+          <div [hidden]="!res2Form.controls['date'].errors.required">Veuillez préciser une date.</div>
+          <div [hidden]="!res2Form.controls['date'].errors.dateCheck">Veuillez sélectionner une date valide.</div>
+        </div>
+      </div>
+
+      <div class="md-form">
+        <i class="fa fa-envelope prefix"></i>
+        <input placeholder="Check-out" class="picker-input" [value]="momentVariable2 | date"
+               [(ngModel)]="momentVariable2" dateTimePicker [mode]="'dropdown'" [viewFormat]= "'DD/MM/YYYY HH:mm'"
+               formControlName="date2" required #myvar2 >
+        <div *ngIf="res2Form.controls['date2'].errors && !res2Form.controls['date2'].pristine" class="error-msg form-control-feedback alert alert-danger">
+          <div [hidden]="!res2Form.controls['date2'].errors.required">Veuillez préciser une date.</div>
+          <div [hidden]="!res2Form.controls['date2'].errors.dateCheck2">Veuillez sélectionner une date ultérieure à la première.</div>
+        </div>
+      </div>
+
+    </form>
+    <div class="md-form">
+      <i class="fa fa-envelope prefix"></i>
+      <input type="textarea" id="form3" class="form-control"  placeholder="Notes" [(ngModel)]="reserv.notes">
+    </div>
+    <br/><br/>
+    <app-alert></app-alert>
+    <div class="text-center">
+      <fieldset class="form-group">
+        <input type="checkbox" id="checkbox1" [(ngModel)]="reserv.valideeParCarteBlueue">
+        <label for="checkbox1">Valider par mon empreinte digitale</label>
+      </fieldset>
+      <hr>
+      <br/>
+      <button class="btn btn-ins btn-lg" (click)="postReserver(reserv)"  [disabled]="!res2Form.valid">Réserver</button>
+
+    </div>
+
+  </div>
+</div>
+<!--/.Form-->
+
+
+
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="../../../js/jquery-3.1.1.min.js"></script>
+
+<!-- Tooltips -->
+<script type="text/javascript" src="../../../js/tether.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../../js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../../js/mdb.min.js"></script>
+
+<script>
+  new WOW().init();
+</script>
+
+</body>
+

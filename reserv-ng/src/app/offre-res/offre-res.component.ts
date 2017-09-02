@@ -11,6 +11,7 @@ import {ClientService} from "../_services/client.service";
 import {Client} from "../_models/Client";
 import {DataOffreResAndClientAndState} from "../_models/DataOffreResAndClientAndState";
 import {OffreResDetailsComponent} from "../offre-res-details/offre-res-details.component";
+import {Reserver2hotelComponent} from "../reserver2hotel/reserver2hotel.component";
 
 
 @Component({
@@ -60,11 +61,19 @@ export class OffreResComponent implements OnInit {
       dataOffreResAndClientAndState.offreRes=offreRes;
       dataOffreResAndClientAndState.client=this.client;
 
-      let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
-        data: dataOffreResAndClientAndState,
-        height: '75%',
-        width: '60%'
-      });
+      if (dataOffreResAndClientAndState.offreRes.prestataire_categorie=="Restaurant"){
+        let dialogRef = this.dialog.open(Reserver2restaurantComponent, {
+          data: dataOffreResAndClientAndState,
+          height: '75%',
+          width: '60%'
+        });
+      }else if (dataOffreResAndClientAndState.offreRes.prestataire_categorie=="Hotel"){
+        let dialogRef = this.dialog.open(Reserver2hotelComponent, {
+          data: dataOffreResAndClientAndState,
+          height: '75%',
+          width: '60%'
+        });
+      }
 
     }else{
 

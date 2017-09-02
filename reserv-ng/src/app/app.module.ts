@@ -32,6 +32,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OffreResDetailsComponent } from './offre-res-details/offre-res-details.component';
+import { Reserver2hotelComponent } from './reserver2hotel/reserver2hotel.component';
 
 const appRoutes: Routes = [
   { path: '', component: OffreResComponent },
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
     FooterComponent,
     AboutComponent,
     NavbarComponent,
-    OffreResDetailsComponent
+    OffreResDetailsComponent,
+    Reserver2hotelComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -97,7 +99,8 @@ const appRoutes: Routes = [
   entryComponents: [
     ReserverComponent,
     Reserver2restaurantComponent,
-    OffreResDetailsComponent
+    OffreResDetailsComponent,
+    Reserver2hotelComponent
   ],
   bootstrap: [AppComponent]
 })
