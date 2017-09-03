@@ -48,13 +48,14 @@ export class Reserver2hotelComponent implements OnInit {
 
   ngOnInit() {
     this.reserv.valideeParCarteBlueue=false;
+    this.reserv.nb_places=1;
   }
 
   postReserver(reserv){
     this.reserv.titre=this.dataOffreResAndClientAndState.offreRes.titre;
     this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
-    this.reserv.nb_places=1;
+    console.log(this.reserv.nb_places);
     this.reserv.dateEtHeure=this.momentVariable;
     //TODO
 

@@ -31,7 +31,6 @@ export class Reserver2restaurantComponent implements OnInit {
               private registerService: RegisterService,
               private clientService: ClientService,
               private alertService: AlertService) {
-
     this.reserv= new Reservation();
 
     this.res2Form = new FormGroup({
@@ -45,13 +44,13 @@ export class Reserver2restaurantComponent implements OnInit {
 
   ngOnInit() {
     this.reserv.valideeParCarteBlueue=false;
+    this.reserv.nb_places=1;
     }
 
   postReserver(reserv){
     this.reserv.titre=this.dataOffreResAndClientAndState.offreRes.titre;
     this.reserv.service=this.dataOffreResAndClientAndState.offreRes.service;
     this.reserv.statut="ok";
-    this.reserv.nb_places=1;
     this.reserv.dateEtHeure=this.momentVariable;
     this.reserv.id_offreRes=this.dataOffreResAndClientAndState.offreRes.id+'';
 
