@@ -13,7 +13,8 @@ export class NavbarComponent implements OnInit {
   cnx_deconnexion="Déconnexion";
 
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService,
+              private router: Router) { }
 
   ngOnInit() {
   }

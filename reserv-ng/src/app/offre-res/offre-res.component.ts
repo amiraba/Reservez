@@ -26,7 +26,10 @@ export class OffreResComponent implements OnInit {
   ticketIconPath= '../../assets/icons/ticket.png';
 
 
-  constructor(private OffreResService: OffreResService, private dialog: MdDialog, public loginService: LoginService, private clientService: ClientService) { }
+  constructor(private OffreResService: OffreResService,
+              private dialog: MdDialog,
+              public loginService: LoginService,
+              private clientService: ClientService) { }
 
   ngOnInit(): void {
     this.OffreResService.getOffreRes()

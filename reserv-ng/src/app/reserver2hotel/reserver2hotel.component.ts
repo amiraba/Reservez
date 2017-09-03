@@ -27,7 +27,6 @@ export class Reserver2hotelComponent implements OnInit {
               private reservationService: ReservationService,
               private loginService: LoginService,
               private registerService: RegisterService,
-              private navbarComponent:NavbarComponent,
               private clientService: ClientService,
               private alertService: AlertService) {
 

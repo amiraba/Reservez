@@ -22,7 +22,9 @@ export class ReserverComponent implements OnInit {
   res1Form: FormGroup;
   res1bForm: FormGroup;
 
-  constructor(private dialog: MdDialog, @Inject(MD_DIALOG_DATA) public offreRes: OffreRes) {
+  constructor(private dialog: MdDialog,
+              @Inject(MD_DIALOG_DATA) public offreRes: OffreRes) {
+
     this.client= new Client();
     this.dataOffreResAndClientAndState= new DataOffreResAndClientAndState();
     this.dataOffreResAndClientAndState.offreRes=offreRes;

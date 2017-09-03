@@ -10,7 +10,9 @@ import {UserCredentials} from "../_models/UserCredentials";
 @Injectable()
 export class LoginService {
 
-  constructor(private http: Http, private alertService: AlertService, private router: Router) { }
+  constructor(private http: Http,
+              private alertService: AlertService,
+              private router: Router) { }
 
   login(userCredentials: UserCredentials){
     let headers= new Headers({

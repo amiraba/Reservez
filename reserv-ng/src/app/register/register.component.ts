@@ -18,8 +18,9 @@ export class RegisterComponent implements OnInit {
   rForm;
   registrationProblem = false;
 
-  constructor(private registerService: RegisterService, private router: Router, private loginService: LoginService,
-              public navbarComponent: NavbarComponent) {
+  constructor(private registerService: RegisterService,
+              private router: Router,
+              private loginService: LoginService) {
     this.client=new Client();
   }
 

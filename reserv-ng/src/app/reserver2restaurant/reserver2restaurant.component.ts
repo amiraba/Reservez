@@ -29,9 +29,9 @@ export class Reserver2restaurantComponent implements OnInit {
               private reservationService: ReservationService,
               private loginService: LoginService,
               private registerService: RegisterService,
-              private navbarComponent:NavbarComponent,
               private clientService: ClientService,
               private alertService: AlertService) {
+
     this.reserv= new Reservation();
 
     this.res2Form = new FormGroup({

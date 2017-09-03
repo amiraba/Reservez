@@ -92,9 +92,7 @@ const appRoutes: Routes = [
     RegisterService,
     ClientService,
     AUTH_PROVIDERS,
-    LoggedInGuard,
-    AppComponent,
-    NavbarComponent
+    LoggedInGuard
   ],
   entryComponents: [
     ReserverComponent,

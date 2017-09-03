@@ -14,7 +14,9 @@ import {NavbarComponent} from "../navbar/navbar.component";
 export class LoginComponent implements OnInit {
   userCredentials;
 
-  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, private dialog: MdDialog) { }
+  constructor(private loginService: LoginService,
+              private router: Router,
+              private dialog: MdDialog) { }
 
   ngOnInit() {
     this.dialog.closeAll();
